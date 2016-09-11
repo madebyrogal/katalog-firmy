@@ -1,0 +1,66 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Galleries
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          galleries
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [galleries_allow]
+        _edit:
+          credentials:  [galleries_allow]
+        _delete:
+          credentials:  [galleries_allow]
+        _index:
+          credentials:  [galleries_allow]
+      fields:
+        name:
+          label: Nazwa galerii
+        created_at: { label: Data utworzenia }
+        count_pictures: {label: Ilość zdjęć}
+      list:
+        table_method: retrieveEditable
+        title: Lista galerii
+        display: [=name, created_at, _count_pictures]
+        max_per_page: 20
+        object_actions:
+          _edit:      { label: Edytuj }
+#          settings: {label: Ustawienia}
+#          addPicture:    {label: Dodaj obrazek}
+          _delete:    { label: Usuń }
+#          delete:    { label: Usuń }
+      filter:
+        display: [name]
+      form:
+        fields:
+          Metas: { label: false }
+        display:
+#          "Galeria": [name, _pictures_list,  created_at]
+          "Galeria": [<?php Lang::getDefaultWidget(); echo ','; ?> _pictures_list,  created_at]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          "Meta tagi": [Metas]
+      edit:
+        title: "Edytuj galerię"
+        display:
+#          "Galeria": [_css,_js, name, created_at, _pictures_list, _file]
+          "Galeria": [_css, _js, <?php Lang::getDefaultWidget(); echo ','; ?> created_at, _pictures_list, ajax_upload]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          "Meta tagi": [Metas]
+        actions:
+          _save: { label: "Zapisz galerię" }
+      new:
+        title: "Dodaj nową galerię"
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

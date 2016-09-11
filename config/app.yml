@@ -1,0 +1,2 @@
+all:
+  super_config: { systemmail_type: smtp, smtp_port: '25', smtp_security: '' }

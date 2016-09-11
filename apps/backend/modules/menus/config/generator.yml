@@ -1,0 +1,66 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Menus
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          menus
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [menus_allow]
+        _edit:
+          credentials:  [menus_allow]
+        _delete:
+          credentials:  [menus_allow]
+        _index:
+          credentials:  [menus_allow]
+      fields:
+        Galleries:
+          label:  "Galeria"
+          help: "Zostanie wyświetlona galeria o tej nazwie"
+        Articles:
+          label:  "Tekst"
+          help: "Zostanie wyświetlony tekst o tym tytule"
+        ArtCategories:
+          label:  "Kategoria tekstów"
+          help:  "Zostanie wyświetlona lista tekstów z wybranej kategorii"
+        name:    { label: Nazwa}
+        target: { label:  Otwórz stronę w}
+        title: { label:  Podpowiedź}
+        url: { label:  Link}
+        model:  { label:  Link ma prowadzić do}
+        parent_id:  { label:  Pozycja}
+        cssclass:  { label:  Wygląd linku}
+        user_banner_id: {label: Banner}
+      list:
+        max_per_page: 99999
+        title: Zarządzaj menu
+        batch_actions: {}
+      filter:
+        class:  false
+      form:
+        display:
+          "Link":                           [id, _js, model, cssclass, name, title, target, parent_id, user_banner_id, is_active]
+          "Strona zewnęrzna - ustawienia":  [url]
+          "Kategoria tekstu":             [ArtCategories]
+          "Tekst":                        [Articles]
+          "Galerie":                        [Galleries]
+          
+      edit:
+        title: "Edycja elementu menu: %%name%%"
+        fields: ~
+      new:
+        title:  Dodaj nowy element
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

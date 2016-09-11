@@ -1,0 +1,34 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title: false
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+    
+
+  stylesheets:    
+    - main.php
+    - jqueryui/start/jquery-ui-1.8.13.custom.css
+    - lightbox/jquery.lightbox.css
+
+  javascripts:    
+    - jquery-1.6.1.min.js
+    - main.js
+    - jflow.plus.js
+    - jqueryui/jquery-ui-1.8.13.custom.min.js
+    - lightbox/jquery.lightbox.min.js
+    - pictures.js
+    - jquery.livequery.js
+    - jquery.cookie.js
+    - stg-privacy-bar.js
+    - twitter-text.js
+
+  has_layout:     true
+  layout:         layout

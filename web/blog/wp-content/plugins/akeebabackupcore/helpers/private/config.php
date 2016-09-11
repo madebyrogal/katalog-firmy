@@ -1,0 +1,2 @@
+<?php die; ?>
+{"cms_url":"http:\/\/katalog-firmy.net\/blog","timezone":"Europe\/Warsaw","user_table":"#__ak_users","options":{"siteurl":"http:\/\/katalog-firmy.net\/blog\/wp-content\/plugins\/akeebabackupcore\/app\/"}}

@@ -1,0 +1,53 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           UserLogos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user_logos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [user_logos_allow]
+        _edit:
+          credentials:  [user_logos_allow]
+        _delete:
+          credentials:  [user_logos_allow]
+        _index:
+          credentials:  [user_logos_allow]
+      fields:
+        file:
+          label:  "Obrazek"
+        is_active:
+          label:  "Wyświetl"
+        user_logo_id:
+          label:  "Nagłówek"
+        title:
+          label:  "Tekst"
+      list:
+        title:  "Lista nagłówków"
+        display:  [ _user_logo_id,_is_active ]
+        actions:
+          _new:
+            label:  "Dodaj nowy"
+      filter:
+        class:  false
+      form:
+        display:
+          "Nagłówek": [  user_logo_id,file,title,is_active]
+      edit:
+        title:  "Edytuj nagłówek"
+      new:
+        title:  "Nowy nagłówek"
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

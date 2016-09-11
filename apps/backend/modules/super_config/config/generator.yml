@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           SuperConfig
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          super_config
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions: ~
+      fields:  
+        setting: { label: Opcja }
+        value: { label: Wartość }
+        scope: { label: Grupa }
+        is_secret: { label: Tajne }
+        is_enabled_for_users: { label: Ukryte dla użytkowników }
+      list:
+        title: Super Config
+        max_per_page:   200
+        sort: [scope]
+        hide: [is_enabled_for_users]
+        display: [=id, =setting, value, description, scope, is_secret]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

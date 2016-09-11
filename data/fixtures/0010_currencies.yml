@@ -1,0 +1,8 @@
+Currency:
+  Currencies_1:
+    name: Złoty polski
+    symbol: PLN
+    language: pl
+    is_active: true
+    is_default: true
+    rate: '1'

@@ -1,0 +1,2 @@
+<h3>Właściciel firmy: <a href="<?php echo url_for('sf_guard_user_edit', $form->getObject()->getProfile()->getGuardUser()); ?>"><?php echo $form->getObject()->getProfile()->getGuardUser()->getUsername(); ?></a></h3>
+<h3><a href="<?php echo url_for('company_stats', $form->getObject()); ?>">Zobacz statystyki</a></h3>

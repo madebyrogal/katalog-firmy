@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           message
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          message
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions: 
+        _new:
+          credentials:  [message_allow]
+        _edit:
+          credentials:  [message_allow]
+        _delete:
+          credentials:  [message_allow]
+        _index:
+          credentials:  [message_allow]
+      fields:
+        message: {label: Wiadomość}
+        description: {label: Opis}
+      list:
+        title: "Lista wiadomości"
+        display: [=id, =message, description]
+        batch_actions: {}
+        actions: {}
+        object_actions:
+          _edit: {}
+      filter:
+        class: false
+      form:
+        display:
+          "Wiadomość": [name, content, _js]
+      edit:
+        title: "Edytuj wiadomość"
+        actions:
+          _list: {}
+          _save: {}
+      new: ~

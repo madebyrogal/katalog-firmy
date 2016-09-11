@@ -1,0 +1,1108 @@
+options:
+  connection: globocam_classic
+  type: INNODB
+  collate: utf8_unicode_ci
+  charset: utf8
+
+Culture:
+  tableName:  of_culture
+  actAs:
+    Sortable: ~ #tworzy pole position
+  columns:
+    language: { type: string(255), primary: true }
+    country:  { type: string(255),  notnull: true }
+    label:  { type: string(255),  notnull: true }
+    is_active: { type: boolean, notnull: true, default: false }
+    is_deleted: { type: boolean, notnull: true, default: false }
+#    is_default: { type: boolean, notnull: true, default: false }
+
+Currency:
+  tableName:  of_currency
+  columns:
+    currency_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    name:  { type: string(255),  notnull:  true }
+    symbol:  { type: string(15),  notnull:  true }
+    language:  { type: string(15),  notnull:  true, default: "pl"  }
+    is_active:       { type: boolean, notnull: true, default: true }
+    is_default:  { type: boolean, notnull: true, default: false }
+    rate: { type: float, notnull:  true, default:  0}
+
+ContactQueries:
+  tableName:  of_contact_queries
+  actAs:
+    Timestampable:  ~
+  columns:
+    query_id:  { type: integer, notnull: true, primary:  true, autoincrement: true  }
+    name: { type: string(255),  notnull:  true, default: "Nazwa" }
+    email: { type: string(255),  notnull:  true, default: "Email" }
+    phone: { type: string(255),  notnull:  false }
+    query: { type: clob(65532),  notnull:  true, default: "Treść zapytania"  }
+    file: { type: string(255),  notnull:  false }
+
+ArtCategories:
+  tableName:  of_artcategories
+  actAs:
+    NestedSet:
+      hasManyRoots: true
+#    Sluggable:
+#      fields: [name]
+#      unique: true
+#      canUpdate: true
+#      indexName:  artcategories_slug
+
+    I18n:
+      tableName:  of_artcategories_translation
+      fields: [name, description, is_lang_active]
+      actAs:
+        Sluggable:
+          fields: [name]
+          unique: true
+          canUpdate: true
+          uniqueBy: [lang, name]
+          indexName:  artcategories_slug
+  columns:
+    artcategory_id:  { type: integer, notnull: true, primary:  true, autoincrement: true  }
+    tree_key:  { type: string(255),  notnull: false } #tylko dla roota - identyfikator
+    name: { type: string(255),  notnull:  true, default: "Nazwa kategorii" }
+    description: { type: clob(65532),  notnull: true, default: "" }
+    is_public:    { type: boolean, notnull: true, default: true }
+    is_deletable:    { type: boolean, notnull: true, default: true }
+    is_editable:    { type: boolean, notnull: true, default: true }
+    meta_id:  { type: integer,  notnull:  false }
+    is_lang_active:    { type: boolean, notnull: true, default: true }
+    record_key:   { type: string(255), notnull: false, unique: false } #tekstowy identyfikator producenta (np do sztywnych obrazków na frontendzie)
+    gallery_id:                 { type: integer, notnull: true }
+  relations:
+    Articles:
+      type: many
+      local:  artcategory_id
+      foreign:  artcategory_id
+    ExtraArticles:
+      class: Articles
+      type: many
+      local:  artcategory_id
+      foreign:  article_id
+      refClass: Articles2ArtCategories
+    Metas:
+      type: one
+      local:  meta_id
+      foreign:  meta_id
+    Galleries:
+      type:     one
+      local:    gallery_id
+      foreign:  gallery_id
+    ArticleCustomFields:
+      class: ArticleCustomField
+      type: many
+      local:  artcategory_id
+      foreign:  field_id
+      refClass: ArticleCustomFields2ArtCategories
+
+ArticlesVersion:
+  tableName:  of_articles_version
+  actAs:
+    Timestampable:  ~
+#    Sluggable:
+#      fields: [title]
+#      unique: true
+#      canUpdate: true
+    I18n:
+      tableName:  of_articles_version_translation
+      fields: [title, content, is_lang_active]
+      actAs:
+        Sluggable:
+          fields: [title]
+          unique: true
+          canUpdate: true
+          uniqueBy: [lang, title]
+  columns:
+    article_version_id:  {  type: integer, notnull: true, primary:  true, autoincrement: true }
+    article_id: { type: integer,  notnull:  true  }
+    author_id: { type: integer,  notnull:  false  }
+    artcategory_id: { type: integer,  notnull:  true  }
+    title:  { type: string(255),  notnull:  true, default: "Nazwa/Tytuł"  }
+    content:  { type: clob(65532),  notnull:  true, default: "<p></p>"  }
+    is_active:  { type: boolean, notnull: true, default: false }
+    is_lang_active:  { type: boolean, notnull: true, default: true }
+  relations:
+    Articles:
+      type: one
+      local:  article_id
+      foreign:  article_id
+      onDelete: CASCADE
+
+Tag:
+  tableName: of_tag
+  actAs:
+    Sluggable:
+      fields: [name]
+      unique: true
+      canUpdate: true
+      uniqueBy: [lang, name]
+  columns:
+    name:  { type: string(255),  notnull:  true  }
+    record_key:   { type: string(255), notnull: false, unique: false }
+    lang: { type: string(255), notnull: false, default: 'pl'}
+  relations:
+    Articles:
+      class: Articles
+      type: many
+      local:  tag_id
+      foreign:  article_id
+      refClass: Article2Tag
+
+ArticleCustomField:
+  tableName: of_article_custom_field
+  columns:
+    name: { type: string(255), notnull: true }
+    type: { type: string(255), notnull: true }
+    record_key:   { type: string(255), notnull: false, unique: false }
+  relations:
+    Articles:
+      class: Articles
+      type: many
+      local:  id
+      foreign:  article_id
+      refClass: ArticleCustomFieldValue
+    ArtCategories:
+      class: ArtCategories
+      type: many
+      local:  id
+      foreign:  artcategory_id
+      refClass: ArticleCustomFields2ArtCategories
+
+Articles:
+  tableName:  of_articles
+  actAs:
+    Timestampable:  ~
+    I18n:
+      tableName:  of_articles_translation
+      fields: [title, content, is_lang_active]
+      actAs:
+        Sluggable:
+          fields: [title]
+          unique: true
+          canUpdate: true
+          uniqueBy: [lang, title]
+#    Sluggable:
+#      fields: [title]
+#      unique: true
+#      canUpdate: true
+  columns:
+    article_id:  {  type: integer, notnull: true, primary:  true, autoincrement: true }
+    author_id: { type: integer,  notnull:  false  }
+    artcategory_id: { type: integer,  notnull:  true  }
+    title:  { type: string(255),  notnull:  true, default: "Nazwa/Tytuł"  }
+    content:  { type: clob(65532),  notnull:  true, default: "<p></p>"  }
+    is_public:    { type: boolean, notnull: true, default: true }
+    is_deletable:    { type: boolean, notnull: true, default: true }
+    is_editable:    { type: boolean, notnull: true, default: true }
+    meta_id:  { type: integer,  notnull:  false }
+    is_lang_active:  { type: boolean, notnull: true, default: true }
+    record_key:   { type: string(255), notnull: false, unique: false } #tekstowy identyfikator producenta (np do sztywnych obrazków na frontendzie)
+  relations:
+#    RelatedArticles_1:
+#      class: Articles
+#      type: many
+#      local:  article_id
+#      foreign:  article_1_id
+#      refClass: Articles2Articles
+#    RelatedArticles_2:
+#      class: Articles
+#      type: many
+#      local:  article_id
+#      foreign:  article_2_id
+#      refClass: Articles2Articles
+    ArtCategories:
+      type: one
+      local:  artcategory_id
+      foreign:  artcategory_id
+      onDelete: CASCADE
+    ExtraArtCategories:
+      class: ArtCategories
+      type: many
+      local:  article_id
+      foreign:  artcategory_id
+      refClass: Articles2ArtCategories
+    ArticlesVersion:
+      type: many
+      local:  article_id
+      foreign:  article_id
+    sfGuardUser:
+      type: one
+      local:  author_id
+      foreign:  id
+      onDelete: SET NULL
+    Galleries:
+      type: many
+      local:  article_id
+      foreign:  gallery_id
+      refClass: ArticleGallery
+    Comments:
+      type: many
+      local:  article_id
+      foreign:  comment_id
+      refClass: CommentArticle
+    Metas:
+      type: one
+      local:  meta_id
+      foreign:  meta_id
+    Files:
+      type: many
+      local:  article_id
+      foreign:  file_id
+      refClass: ArticleFile
+    Tags:
+      class: Tag
+      type: many
+      local:  article_id
+      foreign:  tag_id
+      refClass: Article2Tag
+    ArticleCustomFields:
+      class: ArticleCustomField
+      type: many
+      local:  article_id
+      foreign:  id
+      refClass: ArticleCustomFieldValue
+
+ArticleGallery:
+  tableName:  of_article_gallery
+  columns:
+    article_id: { type: integer,  notnull:  true, primary:  true  }
+    gallery_id: { type: integer,  notnull:  true, primary:  true  }
+  relations:
+    Articles:
+      local:  article_id
+      foreign:  article_id
+      foreignAlias: ArticleGallery
+      onDelete: CASCADE
+    Galleries:
+      local:  gallery_id
+      foreign:  gallery_id
+      foreignAlias: ArticleGallery
+      onDelete: CASCADE
+
+ArticleFile:
+  tableName:  of_article_file
+  columns:
+    article_id: { type: integer,  notnull:  true, primary:  true  }
+    file_id: { type: integer,  notnull:  true, primary:  true  }
+  relations:
+    Articles:
+      local:  article_id
+      foreign:  article_id
+      foreignAlias: ArticleFile
+      onDelete: CASCADE
+    Files:
+      local:  file_id
+      foreign:  file_id
+      foreignAlias: ArticleFile
+      onDelete: CASCADE
+
+Galleries:
+  tableName:  of_galleries
+  actAs:
+    Timestampable:  ~
+#    Sluggable: { fields: [name], unique: true, canUpdate: true, indexName:  galleries_slug }
+    I18n:
+      tableName:  of_galleries_translation
+      fields: [name, is_lang_active]
+      actAs:
+        Sluggable:
+          fields: [name]
+          unique: true
+          canUpdate: true
+          uniqueBy: [lang, name]
+          indexName:  galleries_slug
+  columns:
+    gallery_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    name: { type: string(255),  notnull:  true, default: 'Nazwa galerii'  }
+    meta_id:  { type: integer,  notnull:  false }
+    default_picture_id: { type: integer, notnull: false, unique: true } #SKLEP
+    is_deletable: { type: boolean, notnull: true, default: true }
+    is_editable: { type: boolean, notnull: true, default: true }
+    is_lang_active: { type: boolean, notnull: true, default: true }
+  relations:
+    Pictures:
+      type: many
+      local:  gallery_id
+      foreign:  gallery_id
+    Articles:
+      type: many
+      local:  gallery_id
+      foreign:  article_id
+      refClass: ArticleGallery
+    Comments:
+      type: many
+      local:  gallery_id
+      foreign:  comment_id
+      refClass: CommentGallery
+    Metas:
+      type: one
+      local:  meta_id
+      foreign:  meta_id
+    Company:
+      type: one
+      local:  gallery_id
+      foreign:  gallery_id
+      onDelete: CASCADE    
+    DefaultPicture: #SKLEP
+      class:        Pictures
+      type:         one
+      local:        default_picture_id
+      foreign:      picture_id
+      foreignAlias: GalleryWhereDefault
+      foreignType:  one
+      onDelete:     SET NULL
+
+Pictures:
+  tableName:  of_pictures
+  actAs:
+    Timestampable:  ~
+    I18n:
+      tableName:  of_pictures_translation
+      fields: [title, is_lang_active]
+  columns:
+    picture_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    gallery_id: { type: integer,  notnull:  true  }
+    erp_zd_zdjecieid: { type: integer,  notnull:  false  }
+    file: { type: string(255) }
+    title:  { type: string(255), notnull: false }
+    rate_sum:  { type: integer,  notnull:  false,  default:  0 }
+    rate_hits: { type: integer,  notnull:  false,  default:  0 }
+    is_lang_active: { type: boolean,  notnull: true,  default: true }
+  relations:
+    Galleries:
+      type: one
+      local:  gallery_id
+      foreign:  gallery_id
+      onDelete: CASCADE
+
+Comments:
+  tableName:  of_comments
+  actAs:
+    Timestampable:  ~
+  columns:
+    comment_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    title:  { type: string(255),  notnull:  true  }
+    content:  { type: clob(65532),  notnull:  true  }
+    author: { type: string(255),  notnull:  true  }
+    email: { type: string(255),  notnull:  false  }
+  relations:
+    Articles:
+      type: many
+      local:  comment_id
+      foreign:  article_id
+      refClass: CommentArticle
+    Galleries:
+      type: many
+      local:  comment_id
+      foreign:  gallery_id
+      refClass: CommentGallery
+    Products:
+      type:     many
+      local:    comment_id
+      foreign:  product_id
+      refClass: Comment2Product
+
+CommentArticle:
+  tableName:  of_comment_article
+  columns:
+    comment_id: { type: integer,  notnull:  true, primary:  true  }
+    article_id: { type: integer,  notnull:  true, primary:  true  }
+  relations:
+    Comments:
+      local:  comment_id
+      foreign:  comment_id
+      foreignAlias: ArticleComment
+      onDelete: CASCADE
+
+    Articles:
+      local:  article_id
+      foreign:  article_id
+      foreignAlias: ArticleComment
+      onDelete: CASCADE
+
+CommentGallery:
+  tableName:  of_comment_gallery
+  columns:
+    comment_id: { type: integer,  notnull:  true, primary:  true  }
+    gallery_id: { type: integer,  notnull:  true, primary:  true  }
+  relations:
+    Comments:
+      local:  comment_id
+      foreign:  comment_id
+      foreignAlias: ArticleComment
+      onDelete: CASCADE
+    Galleries:
+      local:  gallery_id
+      foreign:  gallery_id
+      foreignAlias: GalleryComment
+      onDelete: CASCADE
+
+Files:
+  tableName:  of_files
+  actAs:
+    Timestampable:  ~
+    NestedSet:
+      hasManyRoots: true
+    I18n:
+      tableName:  of_files_translation
+      fields: [name, description, is_lang_active]
+      actAs:
+        Sluggable:
+          fields: [name]
+          unique: true
+          canUpdate: true
+          uniqueBy: [lang, name]
+          indexName:  files_slug
+#    Sluggable:
+#      unique: true
+#      fields: [name]
+#      canUpdate: true
+#      indexName:  files_slug
+  columns:
+    file_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    name:  { type: string(255),  notnull:  true, default: "Nazwa pliku lub katalogu" }
+    description:  { type: string(512),  notnull:  true, default: "Opis zawartości" }
+    file: { type: string(512),  notnull:  false }  #nazwa pliku w uploads
+    is_active: { type: boolean, notnull: true, default: true }
+    is_lang_active: { type: boolean, notnull: true, default: true }
+  relations:
+    Articles:
+      type: many
+      local:  file_id
+      foreign:  file_id
+      refClass: ArticleFile
+#    Products:
+#      type:     many
+#      local:    file_id
+#      foreign:  product_id
+#      refClass: Product2File
+
+UserBanners:
+  tableName:  of_user_banners
+  columns:
+    user_banner_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    title:  { type: string(512),  notnull:  true, default: "Krótki tekst" }
+    file: { type: string(512),  notnull:  false }  #nazwa pliku w user_logos
+    is_active:       { type: boolean, notnull: true, default: false }
+    link: { type: string(255),  notnull:  false}
+    target: { type: string(255),  notnull:  true, default: _self }
+
+UserLogos:
+  tableName:  of_user_logos
+  columns:
+    user_logo_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    title:  { type: string(512),  notnull:  true, default: "Krótki tekst" }
+    file: { type: string(512),  notnull:  false }  #nazwa pliku w user_logos
+    is_active:       { type: boolean, notnull: true, default: false }
+
+Sliders:
+  tableName: of_sliders
+  columns:
+    slider_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    name: { type: string(255),  notnull:  true}
+    is_default: { type: boolean, notnull: true, default: false }
+    width: {type: integer,  notnull:  true}
+    height: {type: integer,  notnull:  true}
+    random: { type: boolean, notnull: true, default: false }
+  relations:
+    SliderBanners:
+      type: many
+      local:  slider_id
+      foreign:  slider_id
+
+SliderBanners:
+  tableName: of_slider_banners
+  columns:
+    slider_banner_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    slider_id: { type: integer,  notnull:  true }
+    name: { type: string(255),  notnull:  true}
+    link: { type: string(255),  notnull:  false}
+    user_banner_id: { type: integer,  notnull:  false}
+    file: { type: string(512),  notnull:  false }
+    position: { type: integer,  notnull:  true, default: 0 }
+    target: { type: string(255),  notnull:  true, default: _self }
+  relations:
+    UserBanners:
+      type: one
+      local:  user_banner_id
+      foreign:  user_banner_id
+      onDelete: CASCADE
+
+    Sliders:
+      type: one
+      local:  slider_id
+      foreign:  slider_id
+      onDelete: CASCADE
+
+
+Contact:
+  tableName:  of_contact
+  actAs:
+    I18n:
+      tableName:  of_contact_translation
+      fields: [address, form_email, message_title, map_address, map_localization]
+  columns:
+    contact_id: { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    message_title: { type: string(255),  notnull:  false, default: "Tytuł e-maila" }
+    address:  { type: clob(65532),  notnull:  false, default: "Dane teleadresowe" }
+    map_address:  { type: clob(65532),  notnull:  false, default: "Dane teleadresowe" }
+    map_localization:  { type: clob(65532),  notnull:  false }
+    form_email:  { type: string(255),  notnull:  false, default: "Adres e-mail na który mają przychodzić wiadomości" }
+    has_captcha: { type: boolean, notnull: true, default: true }
+
+Themes:
+  tableName:  of_themes
+  columns:
+    id:              { type: integer(4),  notnull:  true, primary:  true, autoincrement: true  }
+    name:            { type: string(255), notnull:  true  }
+    is_active:       { type: boolean, notnull: true, default: false }
+    creation_date:   { type: date, notnull:  false  }
+    author:          { type: string(255), notnull:  false  }
+    author_email:    { type: string(255), notnull:  false  }
+    author_url:      { type: string(255), notnull:  false  }
+    copyright:       { type: string(255), notnull:  false  }
+    version:         { type: string(100), notnull:  false  }
+    description:     { type: clob(255), notnull: false}
+
+Menus:
+  tableName:  of_menus
+  actAs:
+    NestedSet:
+      hasManyRoots: true
+  columns:
+    name:  { type: string(255),  notnull:  true, default: "Nazwa linku" }
+    title:  { type: string(255),  notnull:  true, default: "Informacja" }
+    menu_key:  { type: string(255),  notnull: false } #tylko dla roota - identyfikator
+    lang:  { type: string(255),  notnull: false } #tylko dla roota
+    url:  { type: string(512),  notnull:  true, default: "URL" }
+    target: { type: string(50),  notnull:  true, default: _self }
+    route:  { type: string(512),  notnull:  true, default: "false" }
+    model:  { type: string(512),  notnull:  true, default: "false" }
+    object:  { type: integer,  notnull:  true, default: 0 }
+    cssclass: { type: string(255),  notnull:  true, default: "empty" }
+    user_banner_id:  { type: integer,  notnull:  false }
+    is_active:       { type: boolean, notnull: true, default: true }
+  relations:
+    UserBanners:
+      type: one
+      local:  user_banner_id
+      foreign:  user_banner_id
+      onDelete: SET NULL
+
+
+Metas:
+  tableName:  of_metas
+  actAs:
+    I18n:
+      tableName:  of_metas_translation
+      fields: [generate, title, description, keywords, copyright, author, email, distribution, rating, robots, revisitafter, expires]
+  columns:
+    meta_id:  { type: integer,  notnull:  true, primary:  true, autoincrement:  true  }
+    is_default: { type: boolean, notnull: true, default: false }
+    generate:  { type: boolean, notnull: true, default: true }
+    title:  { type: string(255),  notnull:  false }
+    description:  { type: string(255),  notnull:  false }
+    keywords: { type: string(255),  notnull:  false }
+    copyright:  { type: string(255),  notnull:  false }
+    author: { type: string(255),  notnull:  false }
+    email:  { type: string(255),  notnull:  false }
+    distribution: { type: string(255),  notnull:  false }
+    rating: { type: string(255),  notnull:  false }
+    robots: { type: string(255),  notnull:  false }
+    revisitafter:  { type: string(255),  notnull:  false }
+    expires:  { type: string(255),  notnull:  false }
+
+SearchIndex:
+  tableName:  of_search_index
+  columns:
+    id: { type: integer, notnull: true, primary: true, autoincrement: true }
+    model: { type: string(255),  notnull:  true}
+    model_id: { type: integer,  notnull:  true}
+    keyword: { type: string(255),  notnull:  true}
+#    lang:  { type: string(255),  notnull: false, primary: true }
+    lang:  { type: string(255),  notnull: true}
+
+SecurityIndex:
+  tableName:  of_security_index
+  columns:
+    id: { type: integer, notnull: true, primary: true, autoincrement: true }
+    model: { type: string(255),  notnull:  true}
+    model_id: { type: integer,  notnull:  true}
+    permission_name: { type: string(255),  notnull:  true}
+
+SuperConfig:
+  tableName:  of_super_config
+  columns:
+    setting: { type: string(255),  notnull:  true, unique:  true  }
+    value:  { type: string(255),  notnull:  true, default: "FALSE" }
+    description:  { type: clob(65532),  notnull:  true, default: "DESCRIPTION" }
+    scope:  { type: string(255),  notnull:  true, default: "OTHER" }
+    is_enabled_for_users: { type: boolean, notnull: true, default: false }
+    is_secret: { type: boolean, notnull: true, default: false}
+
+#SFDOCTRINEGUARD OVERRIDE
+sfGuardGroup:
+  tableName:  of_guard_group
+
+sfGuardPermission:
+  tableName:  of_guard_permission
+
+sfGuardGroupPermission:
+  tableName:  of_guard_group_permission
+
+sfGuardUser:
+  tableName:  of_guard_user
+
+sfGuardUserPermission:
+  tableName:  of_guard_user_permission
+
+sfGuardUserGroup:
+  tableName:  of_guard_user_group
+
+sfGuardRememberKey:
+  tableName:  of_guard_remember_key
+
+sfGuardForgotPassword:
+  tableName:  of_guard_forgot_password
+
+##Ocean firm
+
+Message:
+  tableName: of_message
+  actAs:
+    Timestampable: ~
+  columns:
+    id:           { type: integer, notnull: true, primary: true, autoincrement: true }
+    message:      { type: string(255), notnull: true, default: "" }
+    description:  { type: clob(65532), notnull: true, default: "" }
+    name:         { type: string(255), notnull: true, default: "" }
+    content:      { type: clob(65532), notnull: true, default: "" }
+    
+Prices:
+  tableName:  of_prices
+  actAs:
+    Timestampable: ~  
+  columns:
+    id:           { type: integer, notnull: true, primary:  true, autoincrement: true  }
+    name:         { type: string(255),  notnull:  true, default: "STANDARD" }
+    packet:       { type: integer,  notnull:  true, default: 2 }
+    period:       { type: integer, notnull: true  }
+    price_netto:  { type: integer, notnull: true, default: 0 }
+    price_brutto: { type: integer, notnull: true, default: 0 }
+    is_deletable: { type: boolean, notnull: true, default: true }
+    
+Order:
+  tableName: of_order
+  actAs:
+    Timestampable: ~
+    Versionable:
+      versionColumn: version
+      className: %CLASS%Version
+      auditLog: true
+      tableName: of_order_version
+  columns:
+    id:                 { type: integer, notnull: true, primary: true, autoincrement: true }
+    uid:                { type: string(255), notnull: true, unique: true }
+    profile_id:         { type: integer, notnull: true }
+    company_id:         { type: integer, notnull: true }
+    status_id:          { type: string(255), notnull: true }
+    note:               { type: clob(65532), notnull: false }
+    invoice_id:         { type: integer, notnull: false }
+    value_netto:        { type: integer, notnull: true }
+    value_brutto:       { type: integer, notnull: true }
+    rent_from:          { type: timestamp, notnull: false }
+    rent_to:            { type: timestamp, notnull: false }
+    is_paid:            { type: boolean, notnull: true, default: false }
+    packet:             { type: integer,  notnull:  true, default: 2 }
+  relations:
+    Status:
+      type:     one
+      local:    status_id
+      foreign:  id
+      onDelete: NO ACTION
+    Company:
+      type:     one
+      local:    company_id
+      foreign:  id
+      onDelete: CASCADE
+    Profile:
+      type:     one
+      local:    profile_id
+      foreign:  id
+      onDelete: NO ACTION
+    Invoice:
+      type:     one
+      local:    invoice_id
+      foreign:  id
+      onDelete: SET NULL 
+      
+Invoice:
+  tableName:  of_invoice
+  actAs:
+    Timestampable:  ~
+  columns:
+    id:  { type: integer, notnull: true, primary:  true, autoincrement: true  }
+    sell_by_date:  { type:  timestamp,  notnull:  true }
+    invoice_date:  { type:  timestamp,  notnull:  true }
+    place_of_issue: { type: string(),  notnull:  true, default: "FALSE" }
+    seller: { type: string(),  notnull:  true, default: "FALSE" }
+    buyer: { type: string(),  notnull:  true, default: "FALSE" }
+    service_name: { type: string(),  notnull:  true, default: "FALSE" }
+    net: { type: string(),  notnull:  true, default: "FALSE" }
+    gross_value: { type: string(),  notnull:  true, default: "FALSE" }
+    vat: { type: string(),  notnull:  true, default: "FALSE" }
+    total_price: { type: string(),  notnull:  true, default: "FALSE" }
+    vat_rate: { type: string(),  notnull:  true, default: "FALSE" }
+    vat_amount: { type: string(),  notnull:  true, default: "FALSE" }
+    words: { type: string(),  notnull:  true, default: "FALSE" }
+    paid_by_bank_transfer: { type: string(),  notnull:  true, default: "FALSE" }
+    exhibited: { type: string(),  notnull:  true, default: "FALSE" }
+    received: { type: string(),  notnull:  true, default: "FALSE" }      
+      
+Status:
+  tableName: of_status
+  actAs:
+    Timestampable: ~
+  columns:
+    id:         { type: string(255), notnull: true, primary: true } # klucz główny jest stringiem!
+    name:       { type: string(255), notnull: true }
+  relations:
+    Orders:
+      class:    Order
+      type:     many
+      local:    id
+      foreign:  status_id      
+
+Profile:
+  tableName: of_profile
+  actAs:
+    Timestampable: ~
+  columns:
+    id:                     { type: integer, notnull: true, primary: true, autoincrement: true }        
+    guard_user_id:          { type: integer, notnull: true, unique: true }
+    name:                   { type: string(255),  notnull:  true }
+    city:                   { type: string(255),  notnull:  true }
+    post_code:              { type: string(255),  notnull:  true }
+    street:                 { type: string(255),  notnull:  true }
+    state:                  { type: string(255), notnull: true, default: "" }
+    nip:                    { type: string(255),  notnull:  true }
+    phone:                  { type: string(255), notnull: true, default: "" } 
+  relations:        
+    GuardUser:
+      class: sfGuardUser
+      type: one
+      local: guard_user_id
+      foreign: id
+      onDelete: CASCADE
+      foreignType: one
+      foreignAlias: Profile
+    Company:
+      type: one
+      local: id
+      foreign: profile_id
+      onDelete: CASCADE
+      
+Category:      
+  tableName:  of_category
+  actAs:    
+    Timestampable: ~    
+    NestedSet:
+      hasManyRoots: true
+    Sluggable:
+      fields: [name]
+      unique: true
+      canUpdate: true
+  columns:
+    id:  { type: integer, notnull: true, primary:  true, autoincrement: true  }    
+    name: { type: string(255),  notnull:  true, default: "Nazwa kategorii" }
+    description:        { type: clob(65532),  notnull:  false }
+    is_public:    { type: boolean, notnull: true, default: true }
+    meta_id:  { type: integer,  notnull:  false }
+  relations:      
+    Company:
+      class:    Company
+      type:     many
+      local:    category_id
+      foreign:  company_id
+      refClass: Company2Category    
+    Metas:
+      type: one
+      local:  meta_id
+      foreign:  meta_id      
+
+Company:  
+  tableName:  of_company
+  actAs:
+    Timestampable: ~    
+    Sluggable:
+      fields: [name]
+      unique: true
+      canUpdate: true          
+  columns:
+    id:                 { type: integer, notnull: true, primary:  true, autoincrement: true  }  
+    
+    profile_id:         { type: integer, notnull: false }
+    gallery_id:         { type: integer, notnull: false }
+    meta_id:            { type: integer, notnull: false }       
+    
+    name:               { type: string(255),  notnull:  true }
+    description:        { type: clob(65532),  notnull:  false }
+    
+    city:               { type: string(255),  notnull:  true }
+    post_code:          { type: string(255),  notnull:  true }
+    street:             { type: string(255),  notnull:  true }
+    state:              { type: string(255), notnull: true, default: "" }
+    maps:               { type: clob(65532),  notnull:  true, default: ""  }    
+        
+    nip:                { type: string(255),  notnull:  true }
+    phone:              { type: string(255),  notnull:  true }
+    mobile:             { type: string(255),  notnull:  false }
+    fax:                { type: string(255),  notnull:  false }
+    www:                { type: string(255),  notnull:  false }
+    email_address:      { type: string(255),  notnull:  false }
+    gg:                 { type: string(255),  notnull:  false }
+    skype:              { type: string(255),  notnull:  false }
+    yt:                 { type: string(255),  notnull:  false }
+    fb:                 { type: string(255),  notnull:  false }
+    
+    packet:             { type: integer,  notnull:  true, default: 2 }
+    rent_from:          { type: timestamp, notnull: false }
+    rent_to:            { type: timestamp, notnull: false }
+    is_paid:            { type: boolean, notnull: true, default: false }
+    is_active:          { type: boolean, notnull: true, default: false } 
+  relations:    
+    Galleries:
+      type:     one
+      local:    gallery_id
+      foreign:  gallery_id          
+      onDelete: SET NULL
+    Metas:
+      type: one
+      local:  meta_id
+      foreign:  meta_id  
+    Profile:
+      type:     one
+      local:    profile_id
+      foreign:  id   
+      onDelete: SET NULL
+    Categories:
+      class:    Category
+      type:     many
+      local:    company_id
+      foreign:  category_id
+      refClass: Company2Category
+    Type:
+      class:    Type
+      type:     many
+      local:    company_id
+      foreign:  type_id
+      refClass: Company2Type
+    Email:
+      class:    Email
+      type:     many
+      local:    company_id
+      foreign:  email_id
+      refClass: Stats       
+      
+Type:
+  tableName:  of_type
+  actAs:
+    Timestampable: ~  
+  columns:
+    id:        { type: integer, notnull: true, primary:  true, autoincrement: true  }  
+    name:      { type: string(255),  notnull:  true }
+  relations:    
+    Company:
+      class:    Company
+      type:     many
+      local:    type_id
+      foreign:  company_id
+      refClass: Company2Type
+      
+Email:  
+  tableName:  of_email
+  actAs:
+    Timestampable: ~  
+  columns:
+    id:        { type: integer, notnull: true, primary:  true, autoincrement: true  }  
+    email:      { type: string(255),  notnull:  true }
+  relations:    
+    Company:
+      class:    Company
+      type:     many
+      local:    email_id
+      foreign:  company_id
+      refClass: Stats  
+
+Stats:
+  tableName: of_stats
+  actAs:
+    Timestampable: ~
+  columns:
+    email_id:       { type: integer, notnull: true, primary: true }
+    company_id:      { type: integer, notnull: true, primary: true }
+  relations:
+    Company:
+      class:    Company
+      local:    company_id
+      foreign:  id
+      onDelete: CASCADE
+    Email:
+      class:    Email
+      local:    email_id
+      foreign:  id
+      onDelete: CASCADE
+  
+
+####### Klasy referencyjne #######
+Company2Type:
+  tableName: of_company_2_type
+  actAs:
+    Timestampable: ~
+  columns:
+    company_id:       { type: integer, notnull: true, primary: true }
+    type_id:      { type: integer, notnull: true, primary: true }
+  relations:
+    Company:
+      class:    Company
+      local:    company_id
+      foreign:  id
+      onDelete: CASCADE
+    Type:
+      class:    Type
+      local:    type_id
+      foreign:  id
+      onDelete: CASCADE
+
+Company2Category:
+  tableName: of_company_2_category
+  actAs:
+    Timestampable: ~
+  columns:
+    company_id:       { type: integer, notnull: true, primary: true }
+    category_id:      { type: integer, notnull: true, primary: true }
+  relations:
+    Company:
+      local:    company_id
+      foreign:  id
+      onDelete: CASCADE
+    Category:
+      local:    category_id
+      foreign:  id
+      onDelete: CASCADE
+
+Articles2Articles:
+  tableName: of_articles_2_articles
+  actAs:
+    Timestampable: ~
+  columns:
+    article_1_id: { type: integer, notnull: true, primary: true }
+    article_2_id: { type: integer, notnull: true, primary: true }
+  relations:
+    Article_1:
+      class:    Articles
+      local:    article_1_id
+      foreign:  article_id
+      onDelete: CASCADE
+    Article_2:
+      class:    Articles
+      local:    article_2_id
+      foreign:  article_id
+      onDelete: CASCADE
+
+Article2Tag:
+  tableName: of_article_2_tag
+  columns:
+    article_id: { type: integer, notnull: true, primary: true }
+    tag_id: { type: integer, notnull: true, primary: true }
+  relations:
+    Article:
+      class:    Articles
+      local:    article_id
+      foreign:  article_id
+      onDelete: CASCADE
+    Tag:
+      class:    Tag
+      local:    tag_id
+      foreign:  id
+      onDelete: CASCADE
+
+ArticleCustomFieldValue:
+  tableName: of_article_custom_field_values
+  columns:
+    article_id: { type: integer, notnull: true, primary: true }
+    field_id: { type: integer, notnull: true, primary: true }
+    value: { type: string(1024), notnull: true }
+  relations:
+    Articles:
+      class: Articles
+      local:    article_id
+      foreign: article_id
+#      foreignAlias: ArticleCustomFieldValues
+      onDelete: CASCADE
+    ArticleCustomField:
+      class: ArticleCustomField
+      local:    field_id
+      foreign: id
+#      foreignAlias: ArticleCustomFieldValues
+      onDelete: CASCADE
+
+ArticleCustomFields2ArtCategories:
+  tableName: of_article_custom_field_2_artcategories
+  columns:
+    artcategory_id: { type: integer, notnull: true, primary: true }
+    field_id: { type: integer, notnull: true, primary: true }
+  relations:
+    ArtCategories:
+      class:    ArtCategories
+      local:    artcategory_id
+      foreign:  artcategory_id
+      onDelete: CASCADE
+    ArticleCustomField:
+      class:    ArticleCustomField
+      local:    field_id
+      foreign:  id
+      onDelete: CASCADE
+
+Articles2ArtCategories:
+  tableName: of_articles_2_art_categories
+  actAs:
+    Timestampable: ~
+  columns:
+    article_id: { type: integer, notnull: true, primary: true }
+    artcategory_id: { type: integer, notnull: true, primary: true }
+  relations:
+    Article:
+      class:    Articles
+      local:    article_id
+      foreign:  article_id
+      onDelete: CASCADE
+    ArtCategory:
+      class:    ArtCategories
+      local:    artcategory_id
+      foreign:  artcategory_id
+      onDelete: CASCADE
+
+# favicony i w przyszlosci moze na inne ikony
+Icon:
+  tableName:  of_icons
+  columns:
+    id:              { type: integer,  notnull:  true, primary:  true, autoincrement: true  }
+    title:           { type: string(512),  notnull:  true, default: "Krótki tekst" }
+    file:            { type: string(512),  notnull:  false }
+    is_active:       { type: boolean, notnull: true, default: false }
+    record_key:      { type: string(255), notnull: false, unique: false }
+
+StgLogUserActions:
+  tableName:  of_stg_log_user_actions
+  actAs:
+    Timestampable:  ~
+  columns:
+    user:  { type: string(255), notnull:  true, default:  "ERROR_NO_USER_SPECIFIED"  }
+    module:  { type: string(255), notnull:  true, default:  "ERROR_NO_MODULE_SPECIFIED"  }
+    action:  { type: string(255), notnull:  true, default:  "ERROR_NO_ACTION_SPECIFIED"  }
+    params:  { type: string(255), notnull:  true, default:  "NO_PARAMS_SPECIFIED"  }
+    sf_format:  { type: string(255), notnull:  true, default:  "NO_SF_FORMAT_SPECIFIED"  }

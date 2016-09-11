@@ -1,0 +1,49 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Icon
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          icon
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [icons_allow]
+        _edit:
+          credentials:  [icons_allow]
+        _delete:
+          credentials:  [icons_allow]
+        _index:
+          credentials:  [icons_allow]
+      fields:
+        _icon_id: { label: Ikona }
+        file: { label: Obrazek }
+        is_active: { label: Wyświetl }
+        icon_id: { label: Ikona }
+      list:
+        title:  "Lista ikon"
+        display:  [ _icon_id, _is_active ]
+        actions:
+          _new:
+            label:  "Dodaj nową"
+      filter:
+        class:  false
+      form:
+        display:
+          "Ikona": [ id, file, _is_active ]
+      edit:
+        title:  "Edytuj ikonę"
+      new:
+        title:  "Nowa ikona"
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

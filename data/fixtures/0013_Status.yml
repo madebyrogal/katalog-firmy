@@ -1,0 +1,7 @@
+Status:
+  S1:
+    id: New
+    name: Nowy
+  S2:
+    id: Accepted
+    name: Zaakceptowany

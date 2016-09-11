@@ -1,0 +1,46 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [sf_guard_user_allow]
+        _edit:
+          credentials:  [sf_guard_user_allow]
+        _delete:
+          credentials:  [sf_guard_user_allow]
+        _index:
+          credentials:  [sf_guard_user_allow]
+      fields:
+        first_name:
+          label: "Imię"
+        last_name:
+          label: "Nazwisko"
+        Profile: {label: false}
+      list:
+        max_per_page:   10
+        title:   "Lista użytkowników"
+        display: [=username, first_name, last_name, email_address, created_at, last_login]
+      filter:
+        display: [username, email_address, first_name, last_name]
+      form: 
+        class: sfGuardUserAdminForm
+        display:
+          "User":                   [first_name, last_name, email_address, username, password, password_again]
+          "Profil":                  [Profile]
+          "Permissions and groups": [is_active, groups_list]
+      edit:
+        title: 'Edycja użytkownika'
+      new:
+        title: 'Dodaj nowego użytkownika'

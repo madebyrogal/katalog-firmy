@@ -1,0 +1,41 @@
+Message:
+  M1:
+    message: "mail_order"
+    description: "Wiadomość wysyłana mailem do klienta po złożeniu nowego zamówienia"
+    name: "Dziękujemy za złożenie zamówienia"
+    content: "<p>Dziękujemy <strong>{username}</strong> za złożenie zam&oacute;wienia</p></p>"
+  M2:
+    message: "admin_order"
+    description: "Wiadomość wysyłana mailem do adminstratora po złożeniu nowego zamówienia"
+    name: "Dziękujemy za złożenie zamówienia"
+    content: "<p>Użytkownik <strong>{username}</strong> złożył zamówienie</p></p>"    
+  M3:
+    message: "summary_order"
+    description: "Wiadomość wyświetlana w podsumowaniu zamówienia (z linkiem do płatności online)"
+    name: "Dodawanie firmy zakończone pomyślnie"
+    content: "<p>Dziękujemy <strong>{username}</strong> za dodanie firmy do katalogu.</p><p>Możesz się zalogować i wypełnić szczegółowe informacje.</p><p>Dane do logowania otrzymasz w mailu.</p>"
+  M4:
+    message: "payable_success"
+    description: "Wiadomość wyświetlana na stronie po poprawnym przejściu przez płatności online"
+    name: "Dziekujemy"
+    content: "Dziekujemy"
+  M5:
+    message: "payable_error"
+    description: "Wiadomość wyświetlana na stronie po błędnym przejściu przez płatności online"
+    name: "Błąd płatności"
+    content: "Błąd płatności"
+  M6:
+    message: "no_active"
+    description: "Powiadomienie o błędnej weryfikacji dodanej firmy"
+    name: "Niepoprawna weryfikacja"
+    content: "Nowo dodana firma <strong>'{name}'</strong> nie przeszła poprawnie weryfikacji i jest nieaktywna"
+  M7:
+    message: "delete_company"
+    description: "Zgłoszenie usunięcia firmy"
+    name: "Zgłoszenie usunięcia firmy"
+    content: "Użytkownik zgłosił chęć usunięcia firmy <strong>'{name}'</strong> z katalogu"
+  M8:
+    message: "id_paid"
+    description: "Wiadomość do użytkownika o wygenerowaniu faktury"
+    name: "Wygenerowano fakturę"
+    content: "Witaj,<br />Serdecznie dziękujemy za zakup Pakietu PREMIUM w serwisie Oceanfirm.pl.<br />W panelu administracyjnym - została wygenerowana faktura vat.<br /><br />Aby pobrać fakturę wejdź na stronę http://oceanfirm.pl/panel oraz przejdź do zakładki faktury."    

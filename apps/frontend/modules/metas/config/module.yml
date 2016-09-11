@@ -1,0 +1,21 @@
+all:
+  settings:
+    default_metas:
+      - homepage
+      - contact	
+      - login
+      - create 
+      - activate
+      - comments
+      - search
+      - project
+      - cart
+      - order
+      - ad
+      - sfGuardAuth
+      - user
+      - auth
+      - sfGuardForgotPassword
+      - payable
+      - default
+      - panel

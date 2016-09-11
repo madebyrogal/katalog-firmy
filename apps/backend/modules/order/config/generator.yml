@@ -1,0 +1,53 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Order
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          order
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [order_allow]
+        _edit:
+          credentials:  [order_allow]
+        _delete:
+          credentials:  [order_allow]
+        _index:
+          credentials:  [order_allow]
+      fields:  
+        company: {label: Nazwa firmy}
+        profile: {label: Właściciel}
+        packet_name: {label: Pakiet}
+        value_netto: {label: Cena netto}
+        value_brutto: {label: Cena brutto}
+        rent_from: {label: Wynajem od}
+        rent_to: {label: Wynajem do}
+        is_paid: {label: "Opłacono?"}
+        packet: {label:  Pakiet}
+      list:    
+        title: Lista zamówień
+        sort: [created_at, desc]
+        display: [id, _company, _profile, status, _value_netto, _value_brutto, rent_to, rent_from, is_paid]
+        batch_actions: []
+        actions: []
+        object_actions:
+          _edit: ~
+      filter:  
+        class: false
+      form:    
+        display:
+          "Zamówienie": [company, profile, packet_name, status_id, note, value_netto, value_brutto, rent_from, rent_to, is_paid]
+        actions:
+          _list: ~
+          _save: ~          
+      edit:    
+        title: "Edytuj zamówienie"        
+      new:     ~

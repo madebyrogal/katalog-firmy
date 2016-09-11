@@ -1,0 +1,54 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Company
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          company
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [company_allow]
+        _edit:
+          credentials:  [company_allow]
+        _delete:
+          credentials:  [company_allow]
+        _index:
+          credentials:  [company_allow]
+      fields:  
+        name: {label: Pełna nazwa firmy}
+        profile: {label: Właściciel}
+        city: {label: Miasto}
+        state: {label: Województwo}
+        packet: {label: Aktualny pakiet}
+        is_paid: {label: "Opłacone?"}
+        rent_from: {label: Wykupione od}
+        rent_to: {label: Wykupione do}
+        type_list: {label: Oferty}
+        street: {label: Ulica}
+        post_code: {label: Kod pocztowy}
+        mobile: {label: Komórkowy}
+        categories_list: {label: Kategorie}
+      list:    
+        title: Lista firm
+        actions: []
+        display: [=id, =name, _profile, city, state, _is_paid, _is_active, rent_to, created_at]
+      filter:  
+        display: [name, city, state, email_address, packet, is_paid, is_active]
+      form:    
+        display:
+          "Opis": [packet, is_paid, is_active, rent_from, rent_to, name, description, type_list, _js]
+          "Dane kontaktowe": [street, post_code, city, state, nip, phone, mobile, fax, www, email_address, fb, yt]
+          "Kategorie": [categories_list]
+          "Galeria": [_gallery_preview, gallery_id]
+          "Meta tagi": [Metas]
+      edit:    
+        title: 'Edytuj firmę: "%%name%%"'
+      new:     ~

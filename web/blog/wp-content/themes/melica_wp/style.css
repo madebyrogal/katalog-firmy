@@ -1,0 +1,22 @@
+/*
+    Theme Name: Melica WP theme
+    Description: Melica is a light blog template, crafted to showcase your content in an beautiful style.
+    Author: WPHunters
+    Author URI: http://wphunters.com
+    Version: 1.3
+    License: GNU General Public License version 1.0
+    License URI: https://www.gnu.org/licenses/gpl-1.0.html
+    Theme URI: http://themeforest.net/user/wphunters/portfolio
+*/
+
+/* THEME CHECK FALLBACK. */
+/* CLASSES ARE IMPLEMENTED IN style.less */
+
+.aligncenter { }
+.alignleft { }
+.alignright { }
+.bypostauthor {}
+.gallery-caption {}
+.sticky {}
+.wp-caption-text {}
+.wp-caption {}

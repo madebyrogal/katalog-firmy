@@ -1,0 +1,1 @@
+<h3 class="header header_left">Płatności</h3>

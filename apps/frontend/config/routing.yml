@@ -1,0 +1,202 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+add_company:
+  url: /dodaj-firme.html
+  param: {module: order, action: addCompany}
+
+sitemap:
+  url: /sitemap.xml
+  param:   { module: default, action: sitemap, sf_format: xml }
+
+payable:
+  url: /payable
+  param:   { module: payable, action: payable, sf_format: html }
+  requirements:
+    sf_method: [post]  
+  
+payable_true:
+  url: /payable_true
+  param:   { module: payable, action: payableTrue, sf_format: html }    
+
+payable_false:
+  url: /payable_false
+  param:   { module: payable, action: payableFalse, sf_format: html }    
+
+panel_prices:
+  url: /cennik
+  param:   { module: panel, action: prices, sf_format: html } 
+
+panel_delete_picture:
+  url: /panel_delete_picture
+  class:   sfDoctrineRoute
+  options: { model: Pictures, type: object}
+  param:   { module: panel, action: deletePicture, sf_format: html }
+
+set_category: 
+  url: /set_category
+  param:   { module: default, action: setCategory, sf_format: html }  
+  
+get_category:
+  url: /get_category
+  param:   { module: default, action: getCategory, sf_format: html }  
+
+stats_button:
+  url: /stats_button/:id
+  class:   sfDoctrineRoute
+  options: { model: Company, type: object}
+  param:   { module: company, action: statsButton, sf_format: html }  
+
+panel_delete:
+  url: /panel_delete
+  param:   { module: panel, action: delete, sf_format: html }
+  
+add_renew:
+  url: /add_renew
+  param:   { module: panel, action: addRenew, sf_format: html }
+  
+add_to_premium:
+  url: /add_to_premium
+  param:   { module: panel, action: addToPremium, sf_format: html }
+  
+panel_premium:
+  url: /panel_premium
+  param:   { module: panel, action: premium, sf_format: html }
+
+panel_renew:
+  url: /panel_renew
+  param:   { module: panel, action: renew, sf_format: html }
+
+panel:
+  url: /panel
+  param:   { module: panel, action: info, sf_format: html }
+
+panel_gallery_pictures:
+  url: /panel/pictures
+  param:   { module: panel, action: pictures, sf_format: html }
+  requirements:
+    sf_method: [post] 
+    
+panel_delete_logo:    
+  url: /panel/delete_logo
+  param:   { module: panel, action: DeleteLogo, sf_format: html }
+
+panel_gallery:
+  url: /panel/galeria
+  param:   { module: panel, action: gallery, sf_format: html }
+
+panel_invoices:
+  url: /panel/faktury
+  param:   { module: panel, action: invoices, sf_format: html }
+
+panel_payable:
+  url: /panel/platnosci
+  param:   { module: panel, action: payable, sf_format: html }
+
+panel_profile:
+  url: /panel/profil
+  param:   { module: panel, action: profile, sf_format: html }
+  requirements:
+    sf_method: [get, post]
+
+download_invoice:
+  url: /panel/infoice/:id
+  class:   sfDoctrineRoute
+  options: { model: Invoice, type: object}
+  param:   { module: panel, action: download, sf_format: html }
+
+company:
+  url: /firma/:slug.html
+  class:   sfDoctrineRoute
+  options: { model: Company, type: object}
+  param:   { module: company, action: show, sf_format: html }
+    
+company_post:
+  url: /firma/:slug.html
+  class:   sfDoctrineRoute
+  options: { model: Company, type: object}
+  param:   { module: company, action: show, sf_format: html }
+  requirements:
+    sf_method: [post]     
+
+category:
+  url: /kategoria/:slug.html
+  class:   sfDoctrineRoute
+  options: { model: Category, type: object}
+  param:   { module: company, action: search, sf_format: html }
+
+search:
+  url: /search
+  param:   { module: company, action: search, sf_format: html }
+
+#search_ajax:
+#  url: /search_ajax
+#  param:   { module: company, action: searchAjax, sf_format: html }
+
+summary_order:
+  url: /podsumowanie-zamowienia/:uid.html
+  class:   sfDoctrineRoute
+  options: { model: Order, type: object}
+  param:   { module: order, action: summaryOrder, sf_format: html }
+
+add_order:
+  url: /add_order
+  param: {module: order, action: addOrder}
+
+order:
+  url: /wybierz-pakiet.html
+  param: {module: order, action: order}
+
+
+articles_show:
+  url:     /:sf_culture/:category_slug/:slug.html
+  class:   sfDoctrineRoute
+  options: { model: Articles, type: object, method: doSelectForSlug }
+  param:   { module: article, action: show, sf_format: html }
+  requirements:
+    article_id: \d+
+    sf_method: [get]
+
+contact:
+  url: /kontakt.html
+  class: sfDoctrineRoute
+  options:  { model:  Contact,  type: object  }
+  param:   { module: contact, action: index }
+  requirements:
+    sf_method: [get, post]
+
+#auth
+sf_guard_signin:
+  url: /logowanie.html
+  param:   { module: auth, action: login, sf_format: html }
+
+user_login:
+  url: /logowanie.html
+  param:   { module: auth, action: login, sf_format: html }
+  requirements:
+    sf_method: [post]
+
+user_logout:
+  url: /wyloguj.html
+  param:   { module: auth, action: logout, sf_format: html }
+  
+remind_password:
+  url:     /zapomnialem-hasla.html
+  param:   { module: sfGuardForgotPassword, action: index, sf_format: html }  
+  
+user_register:
+  url: /wybierz-pakiet.html
+  param: {module: order, action: order}  
+
+# default rules
+homepage:
+  url:   /
+  param: { module: homepage, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

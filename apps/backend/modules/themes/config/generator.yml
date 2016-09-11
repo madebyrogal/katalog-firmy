@@ -1,0 +1,50 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Themes
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          themes
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [themes_allow]
+        _edit:
+          credentials:  [themes_allow]
+        _delete:
+          credentials:  [themes_allow]
+        _insex:
+          credentials:  [themes_allow]
+      fields:
+        name:
+          label:  "Nazwa szablonu"
+        is_active:
+          label:  "Aktywny"
+        author:
+          label:  "Autor"
+        version:
+          label:  "Wersja"
+        description:
+          label:  "Nazwa szablonu"
+      list:
+        title:  "Lista szablonów"
+        display:  [ description, _is_active,author,version ]
+        object_actions: {}
+        batch_actions: {}
+        actions:  {}
+      filter:
+        class:  false
+      form:
+        display:
+          "Szablon": [ name,is_active,author,version ]
+      edit:
+        title:  "Edytuj szablon"
+      new:
+        title:  "Nowy szablon"

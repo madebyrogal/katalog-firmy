@@ -1,0 +1,69 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ArtCategories
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          art_categories
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [art_categories_allow]
+        _edit:
+          credentials:  [art_categories_allow]
+        _delete:
+          credentials:  [art_categories_allow]
+        _index:
+          credentials:  [art_categories_allow]
+      fields:
+        is_public:    { label: Widoczna}
+      list:
+        title:        Lista kategorii tekstów
+        display:      [name, is_public]
+        max_per_page: 99999 #XXX - nie wiem jak zoribć, żeby nie dzielił wyników na strony, więc jest ustawione na taką wartość by wszystkie kategorie były na jednej stronie
+        batch_actions:
+          _delete:
+            label: "Usuń"
+        batch_actions: {}
+        object_actions:
+          _edit:
+            label: "Edytuj"
+          settings: {label: Ustawienia}
+          _delete:
+            label: "Usuń"
+      filter:
+        class:        false
+      form:
+        display:
+#          "Kategoria":       [artcategory_id, <?php Lang::getDefaultWidget(); echo ','; ?> is_public, parent_id, _js]
+          "Kategoria":       [artcategory_id, <?php Lang::getDefaultWidget(); echo ','; ?> is_public, _js]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          "Meta tagi":   [Metas]
+        fields:
+          Metas: { label: false }
+      edit:
+        title:        Edycja kategorii tekstów
+        fields:
+#          parent_id:
+#            attributes:
+#              - style: "display: none"
+            label: false
+      new:
+        title: 	      Dodaj nową kategorię tekstów
+        display:
+#          "Kategoria":       [artcategory_id, <?php Lang::getDefaultWidget(); echo ','; ?> is_public, parent_id, _js]
+          "Kategoria":       [artcategory_id, <?php Lang::getDefaultWidget(); echo ','; ?> parent_id, is_public, _js]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          "Meta tagi":   [Metas]
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

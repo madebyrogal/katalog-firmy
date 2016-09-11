@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ContactQueries
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contact_queries
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [contact_queries_allow]
+        _edit:
+          credentials:  [contact_queries_allow]
+        _delete:
+          credentials:  [contact_queries_allow]
+        _index:
+          credentials:  [contact_queries_allow]
+      fields:  ~
+      list:
+        actions: {}
+        display: [query_id, name, email, phone, created_at]
+      filter:
+        class: false
+      form:
+        display:
+          "Query": [name, email, phone, _file, query, created_at]
+      edit:    ~
+      new:     ~

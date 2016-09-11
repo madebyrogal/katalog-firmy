@@ -1,0 +1,179 @@
+Menus:
+  NestedSet: true
+  MAINMENU_PL:
+    name: 'Menu główne'
+    title: 'Menu główne'
+    menu_key: 'Menu główne' #UWAGA! To się ściśle wiąże z 'menu_keys' w SuperConfig + z wyświeltaniem menu we frontend
+    lang: pl
+    url: url
+    target: _self
+    route: "false"
+    model: "false"
+    object: 0
+    children:
+      MAINMENU_PL_1:
+        url: URL
+        target: _self
+        route: 'false'
+        model: 'route:order'
+        object: '0'
+        cssclass: empty
+        name: 'Dodaj firme'
+        title: 'Dodaj firme'
+      MAINMENU_PL_2:
+        url: URL
+        target: _self
+        route: 'articles_show'
+        model: 'Articles'
+        object: '1'
+        cssclass: empty
+        name: 'Informacje'
+        title: 'Informacje'
+      MAINMENU_PL_3:
+        url: URL
+        target: _self
+        route: 'false'
+        model: 'route:panel'
+        object: '0'
+        cssclass: empty
+        name: 'Panel klienta'
+        title: 'Panel klienta'
+      MAINMENU_PL_4:
+        url: URL
+        target: _self
+        route: 'false'
+        model: 'route:contact'
+        object: '0'
+        cssclass: empty
+        name: 'Kontakt'
+        title: 'Kontakt'
+  MENU2:
+    name: "Informacje"
+    title: "Informacje"
+    menu_key: 'Informacje'    
+    lang: pl
+    url: url
+    target: _self
+    route: "false"
+    model: "false"
+    object: 0
+    children:
+      MENU2_1:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU2_2:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'        
+      MENU2_3:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU2_4:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU2_5:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU2_6:
+        url: URL
+        target: _self
+        route: "false"
+        model: "false"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU2_7:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet' 
+      MENU2_8:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'        
+  MENU3:
+    name: "Pozostałe"
+    title: "Pozostałe"
+    menu_key: 'Pozostałe'    
+    lang: pl
+    url: url
+    target: _self
+    route: "false"
+    model: "false"
+    object: 0
+    children:    
+      MENU3_1:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU3_2:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'        
+      MENU3_3:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'
+      MENU3_4:
+        url: URL
+        target: _self
+        route: "false"
+        model: "route:homepage"
+        object: 0
+        cssclass: empty
+        name: 'Lorem ipsum dolor sit amet'
+        title: 'Lorem ipsum dolor sit amet'        

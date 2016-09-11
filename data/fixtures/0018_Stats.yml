@@ -1,0 +1,13 @@
+Email:
+  e_1:
+    email: pawel@studiotg.pl
+  e_2:
+    email: psalajczy@gmail.com
+    
+Stats:
+  stats1:
+    email_id: 1
+    company_id: 1
+  stats2:
+    email_id: 2
+    company_id: 1

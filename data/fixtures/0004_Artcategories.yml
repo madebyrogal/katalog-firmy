@@ -1,0 +1,15 @@
+ArtCategories:
+  NestedSet: true
+  ART_CATEGORY_0:
+    is_public: true
+    name: 'Kategorie tekstów'
+    tree_key: ARTICLES_TREE
+    children:
+      ART_CATEGORY_1:
+        is_public: true
+        name: 'Artykuły'
+        is_deletable: false
+      ART_CATEGORY_2:
+        is_public: true
+        name: 'Aktualności'
+        record_key: NEWS

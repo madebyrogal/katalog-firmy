@@ -1,0 +1,54 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Pictures
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          pictures
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [pictures_allow]
+        _edit:
+          credentials:  [pictures_allow]
+        _delete:
+          credentials:  [pictures_allow]
+        _index:
+          credentials:  [pictures_allow]
+      fields:
+        gallery_id: {label: Galeria}
+        file: {label: Obrazek}
+        title: {label: Nazwa}
+      list:
+        table_method: getFromEditableGalleries
+        title: Lista obrazków
+        display:  []
+        batch_actions: {}
+      filter:
+        display: [gallery_id]
+      form:
+        display:
+          "Obrazek": [gallery_id, <?php Lang::getDefaultWidget(); echo ','; ?>  file ]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+      edit:
+        title: Edytuj obrazek
+        display:
+          "Obrazek": [gallery_id, <?php Lang::getDefaultWidget(); echo ','; ?> file, old_file ]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+      new:
+        title: Dodaj nowy obrazek
+        display:
+          "Obrazek": [gallery_id, <?php Lang::getDefaultWidget(); echo ','; ?> file]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

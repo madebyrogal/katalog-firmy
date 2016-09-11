@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Invoice
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          invoice
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [invoice_allow]
+        _edit:
+          credentials:  [invoice_allow]
+        _delete:
+          credentials:  [invoice_allow]
+        _index:
+          credentials:  [invoice_allow]
+      fields:
+        name: {label: Numer}
+        seller: {label: Strzedawca}
+        buyer: {label: Nabywca}
+        total_price: {label: Kwota}
+        invoice_date: {label: Data wystawienia}
+      list:    
+        sort: [created_at, desc]
+        title: Lista faktur
+        display: [id, name, seller, buyer, total_price, invoice_date]
+        batch_actions: []
+        actions: []
+        object_actions:
+          show: {label: Pobierz}
+      filter:  
+        class: false
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,1 @@
+<a href="<?php echo url_for('sf_guard_user_edit', $company->getProfile()->getGuardUser()); ?>"><?php echo $company->getProfile()->getGuardUser()->getUsername(); ?></a>

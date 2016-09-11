@@ -1,0 +1,4 @@
+class:  "stgHelpClass"
+forms:
+  ExampleForm:
+    example: example

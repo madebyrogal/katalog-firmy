@@ -1,0 +1,21 @@
+#container { background: #0D484B url(images/turquoise/container-bg.png) repeat-y; }	
+	#container2 { background:  url(images/turquoise/container-bg-right.png) top right repeat-y;}		
+			ul.nav ul li a { background: url(images/turquoise/dropdown-bullet.png) no-repeat 0px 2px; }
+			ul.nav ul li a:hover { background: url(images/turquoise/dropdown-bullet.png) no-repeat 0 -32px; }
+#footer { background: #0D484B url(images/turquoise/footer-leftbg.png) repeat-y; }
+	#footer-wrapper { background: url(images/turquoise/footer-rightbg.png) repeat-y top right; }		
+	#content-bottom-bg { border-bottom: 1px solid #0D484B;}
+		#footer .widget ul a { background: url(images/turquoise/footer-bullet.png) no-repeat 0 2px;}
+			input#searchinput { color: #F7F9F9; text-shadow: 1px 1px 1px #9DB2B2; }
+	ul.nav ul { background: #045189;}	
+		ul.nav > li.sf-ul.sfHover > a { background: #045189;}
+	p#copyright { color:#ffffff; text-shadow: 1px 1px 1px #272522; }
+		p#copyright a { color:#C5F0FE; }		
+			div.category {background-color: #045189;}	
+				h2.title a {color: #045189;}
+				.post-text h1.title {color: #045189;}
+	h3#comments { color: #7e426d;}
+		#sidebar h3.widgettitle {color:#7e426d;}		
+			#tabbed-area li a { color: #7e426d;}
+				
+				

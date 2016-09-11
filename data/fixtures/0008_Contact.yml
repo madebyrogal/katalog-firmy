@@ -1,0 +1,6 @@
+Contact:
+  Contact_1:
+    message_title:  Wiadomość kontaktowa
+    form_email:     mailer@serwertg.pl
+    map_address: 'Studiotg Agencja Interaktywna<br />ul. Gliwicka 42<br />42-600 Tarnowskie Góry'
+    map_localization: '50.4399395, 18.8498181'

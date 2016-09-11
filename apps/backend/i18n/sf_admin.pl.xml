@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header />
+    <body>
+      <!-- Actions -->
+      <trans-unit>
+        <source>New</source>
+        <target>Nowy</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit>
+        <source>List</source>
+        <target>Lista</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and add</source>
+        <target>Zapisz i dodaj kolejny</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Cancel</source>
+        <target>Anuluj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Choose an action</source>
+        <target>Wybierz akcję</target>
+      </trans-unit>
+      <trans-unit>
+        <source>go</source>
+        <target>ok</target>
+      </trans-unit>
+
+      <!-- Filters -->
+      <trans-unit>
+        <source>Reset</source>
+        <target>Wyczyść</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filters</source>
+        <target>Szukaj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filter</source>
+        <target>Szukaj</target>
+      </trans-unit>
+
+      <!-- List -->
+      <trans-unit>
+        <source>No result</source>
+        <target>Brak wyników.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit>
+        <source>(page %%page%%/%%nb_pages%%)</source>
+        <target>(strona %%page%%/%%nb_pages%%)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>asc</source>
+        <target>rosnąco</target>
+      </trans-unit>
+      <trans-unit>
+        <source>desc</source>
+        <target>malejąco</target>
+      </trans-unit>
+      <trans-unit>
+        <source>[0] no result|[1] 1 result|(1,+Inf] %1% results</source>
+        <target>[0] brak wyników|[1,+Inf] wyników: %1%</target> 
+      </trans-unit>
+
+      <!-- Pagination -->
+      <trans-unit>
+        <source>First page</source>
+        <target>Pierwsza strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Previous page</source>
+        <target>Poprzednia strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Next page</source>
+        <target>Następna strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last page</source>
+        <target>Ostatnia strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>First</source>
+        <target>Pierwsza strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last</source>
+        <target>Ostatnia strona</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Prev</source>
+        <target>Wstecz</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Next</source>
+        <target>Dalej</target>
+      </trans-unit>
+      <trans-unit>
+        <source>%1% - %2% of %3%</source>
+        <target>%1% - %2% z %3%</target>
+      </trans-unit>
+
+      <!-- Form -->
+      <trans-unit>
+        <source>The item was created successfully.</source>
+        <target>Obiekt został utworzony.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was updated successfully.</source>
+        <target>Obiekt został zaktualizowany.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was created successfully. You can add another one below.</source>
+        <target>Obiekt został utworzony. Możesz teraz dodać kolejny.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was updated successfully. You can add another one below.</source>
+        <target>Obiekt został zaktualizowany. Możesz teraz dodać kolejny.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item has not been saved due to some errors.</source>
+        <target>Z powodu błędów obiekt nie został zapisany.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was deleted successfully.</source>
+        <target>Obiekt został usunięty.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must at least select one item.</source>
+        <target>Musisz wybrać co najmniej jeden obiekt.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You must select an action to execute on the selected items.</source>
+        <target>Musisz wybrać akcję do wykonania na wybranych obiektach.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurs when deleting the selected items as some items do not exist anymore.</source>
+        <target>Wystąpił błąd podczas usuwania wybranych obiektów, ponieważ niektóre już nie istnieją.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected items have been deleted successfully.</source>
+        <target>Wybrane obiekty zostały usunięte.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurs when deleting the selected items.</source>
+        <target>Wystąpił błąd podczas usuwania wybranych obiektów.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Are you sure?</source>
+        <target>Na pewno chcesz usunąć?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The two passwords must be the same.</source>
+        <target>Hasła muszą być takie same.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete order</source>
+        <target>Zamówienie zostało usunięte</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Deleted product</source>
+        <target>Produkt został usunięty</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required.</source>
+        <target>Pole wymagane</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Category has been set unpublic.</source>
+        <target>Kategoria została ukryta</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Category has been set public.</source>
+        <target>Kategoria została ustawiona jako widoczna</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A problem occurs when switch unbuplic item</source>
+        <target>Wystąpił problem ze zmianą na niewidoczny</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Active state changed</source>
+        <target>Status aktywności zmieniony</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Default language changed</source>
+        <target>Domyślny język zmieniony</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Changed</source>
+        <target>Zmieniono</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Can not delete default currency.</source>
+        <target>Nie można usunąć domyślnej waluty</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Can not delete currency which is used.</source>
+        <target>Nie można usunąć waluty która jest wykorzystywana</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Can not delete default culture.</source>
+        <target>Nie można usunąć domyślnego języka</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Can't remove system's status</source>
+        <target>Nie można usunąć statusów systemowych</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Can't remove status with orders</source>
+        <target>Nie można usunąć statusu powiązanego z zamówieniem</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Orders grouped succesfully</source>
+        <target>Zamówienia zgrupowane z powodzeniem</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Group orders</source>
+        <target> Grupuj zamówienia</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Generate xml successfully</source>
+        <target> XML został wygenerowany</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Generate xml</source>
+        <target>Generuj xml</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Are you sure?</source>
+        <target>Jesteś pewien?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore product</source>
+        <target>Produkt został przywrócony</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore order</source>
+        <target>Zamówienie zostało przywrócone</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Maps</source>
+        <target>Mapy</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Charts</source>
+        <target>Wykresy</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Summary</source>
+        <target>Podsumowanie</target>
+      </trans-unit>
+      <trans-unit>
+          <source>ListShow</source>
+          <target>Podgląd</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

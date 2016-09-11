@@ -1,0 +1,20 @@
+<wpml-config>
+    <admin-texts>
+        <key name="vpt_option">
+            <key name="logo_text" />
+            <key name="image_logo" />
+            <key name="melica_keywords" />
+            <key name="primary_font_face" />
+            <key name="primary_font_weight" />
+            <key name="secondary_font_face" />
+            <key name="404_text" />
+        </key>
+    </admin-texts>
+    <custom-fields>
+        <custom-field action="translate">quote_text</custom-field>
+        <custom-field action="translate">quote_author</custom-field>
+        <custom-field action="translate">title</custom-field>
+        <custom-field action="translate">text</custom-field>
+        <custom-field action="translate">status_text</custom-field>
+    </custom-fields>
+</wpml-config>

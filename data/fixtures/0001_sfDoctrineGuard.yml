@@ -1,0 +1,56 @@
+#################
+#     USERS     #
+#################
+sfGuardUser:
+  USER_ROOT:
+    first_name:     "Super"
+    last_name:      "Administrator"
+    email_address:  root@test9.pl
+    username:       root
+    password:       jcpjcw12pl
+    is_active:      true
+    is_super_admin: true
+    Groups:         [GROUP_ROOT, GROUP_ADMIN, GROUP_CLIENT]
+  USER_ADMIN:
+    first_name:     "Użytkownik"
+    last_name:      "Administracyjny"
+    email_address:  pawel@studiotg.pl
+    username:       admin
+    password:       test
+    is_super_admin: false
+    is_active:      true
+    Groups:         [GROUP_ADMIN, GROUP_CLIENT]
+  USER_GUEST:
+    first_name:     "Gość"
+    last_name:      "niezarejestrowany"
+    username:       "guest"
+    password:       "fhgcvbHJKfcVBNvghFGbhlkgfgfhDFgcvgjfkdgfhghgVBgkjfdfgCGhgfFC"
+    is_super_admin: false
+    is_active:      false
+    Groups:         [GROUP_CLIENT]
+  USER_DEFAULT:
+    first_name:     "Jan"
+    last_name:      "Kowalski"
+    email_address:  jan.kowalski@gmail.com
+    username:       jan.kowalski@gmail.com
+    password:       test
+    is_super_admin: false
+    is_active:      true
+    Groups:         [GROUP_CLIENT]    
+
+#################
+#     GROUPS    #
+#################
+sfGuardGroup:
+  GROUP_ROOT:
+    name:           Super-Administratorzy
+    description:    Super-Administratorzy serwisu
+    Permissions:    []
+  GROUP_ADMIN:
+    name:           Administratorzy
+    description:    Administratorzy serwisu
+    Permissions:    []
+  GROUP_CLIENT:
+    name:           Klienci
+    description:    Klienci sklepu
+    Permissions:    []

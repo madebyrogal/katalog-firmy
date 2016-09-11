@@ -1,0 +1,38 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Metas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          metas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [metas_allow]
+        _edit:
+          credentials:  [metas_allow]
+        _delete:
+          credentials:  [metas_allow]
+        _index:
+          credentials:  [metas_allow]
+        _save:
+          credentials:  [metas_allow]
+      fields: ~
+      list:    ~
+      filter:  ~
+      form:
+        actions:
+          _list: ~
+          _save: ~
+        display:
+#          "Meta tagi": []
+      edit:
+        title:  "Edytuj domyślne meta tagi"
+      new: ~

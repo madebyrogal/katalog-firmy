@@ -1,0 +1,6 @@
+Culture:
+  pl_PL:
+    language: pl
+    country:  PL
+    label:  "Polski"
+    is_active:  true

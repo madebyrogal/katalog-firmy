@@ -1,0 +1,14 @@
+indexSuccess:
+  stylesheets:    
+    - /backend/themes/css/jquery.treeTable.css
+    - /backend/themes/css/main.css
+    - /css/lightbox/jquery.lightbox.css
+
+  javascripts:
+    - /backend/themes/js/jquery.treeTable.min.js
+    - /backend/themes/js/main.js
+    - /js/tiny_mce/tiny_mce.js
+    - /backend/themes/js/jquery-ui-1.8.5.custom.min.js
+    - /js/lightbox/jquery.lightbox.min.js
+    - /js/pictures.js
+    - /js/jquery.livequery.js

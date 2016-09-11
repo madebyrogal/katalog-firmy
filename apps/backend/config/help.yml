@@ -1,0 +1,68 @@
+class:  "stgHelpClass"
+forms:
+  ArtCategoriesForm:
+    is_public:  "Czy kategoria ma być widoczna na stronie?"
+  ArticlesTranslationForm:
+    title:  "Tytuł tekstu"
+  ArticlesForm:
+    artcategory_id: "Wybierz kategorię, do której należy artykuł"
+    author_id: "Aby dodać nowego lub zmienić instniejącego autora <a href=\"/guard/users\">kliknij tutaj</a>"
+    is_public: "Czy artykuł ma być widoczny na stronie?"
+    created_at: "Wprowadź datę utworzenia tekstu"
+    Tags: "Dodaj kolejne tagi po przeciknu"
+  MenusForm:
+    Galleries: "Zostanie wyświetlona galeria o tej nazwie"
+    Articles: "Zostanie wyświetlony tekst o tym tytule"
+    ArtCategories: "Zostanie wyświetlona lista tekstów z wybranej kategorii"
+    url: "Adres strony"
+    model: "Określa, czy link ma prowadzić do strony zewnętrznej, czy jakiegoś rodzaju strony wewnętrznej serwisu"
+    parent_id: "Określa, w którym miejscu drzewa menu powinien się znaleźć dodawany element"
+    cssclass: "Link może różnie wyglądać - wybierz odpowiadający Ci wygląd"
+    user_banner_id: "Banner dla pozycji (podstrony bedą dziedziczyć banner)"
+    target: "Ustawia sposób otwierania strony"
+    name: "Tekst, który wyświetli się jako link"
+    title: "Podpowiedź pojawiająca się po najechaniu kursorem na link"
+    is_active: "Czy pozycja w menu ma być aktywna na stronie?"
+  GalleriesForm:
+    created_at: "Wprowadź datę utworzenia galerii"
+    ajax_upload: "Możesz dodać na raz kilka obrazków. Po prostu zaznacz wybrane obrazki i je wgraj"
+  PicturesForm:
+    gallery_id: "Wybierz galerię, do której należy obrazek"
+    file: "Wybierz obrazek (dostępne formaty: .jpg, .gif, .png)"        
+  UserBannersForm:
+    file: "Np. zdjęcie wszystkich pracowników. Rozmiar: <?php echo stgConfig::get('banners_thumbnail_max_width') ?>x<?php echo stgConfig::get('banners_thumbnail_max_height') ?> (w pikselach)"
+    title: "Tekst wyświetli się zamiast obrazka lub po najechaniu kursorem na obrazek"
+  UserLogosForm:
+    file: "Np. logo Twojej firmy. Rozmiar: <?php echo stgConfig::get('logos_picture_width') ?>x<?php echo stgConfig::get('logos_picture_height') ?> (w pikselach)"
+    title: "Tekst wyświetli się zamiast obrazka lub po najechaniu kursorem na obrazek"
+  sfGuardUserAdminForm:
+    discount_web_only: "Liczba od 0 do 99"  
+  MessageForm:
+    name: Tytuł wiadomości e-mail  
+  FilesForm:
+    parent_id: Wybierz pozycję w drzewie
+  FilesTranslationForm:
+    description: "Dodaj krótki opis pliku"
+  IconForm:
+    file: "Zalecany rozmiar ikon - 16x16 lub 32x32 piksele"
+  PricesForm:
+    packet: Wybierz pakiet
+    period: Ilość dni, (0 = nie dotyczy)
+    price_netto: Kwota podawana w groszach
+    price_brutto: Kwota podawana w groszach
+    start_netto: Kwota netto pomniejszona o darmowy okres przy dodawaniu firmy
+    start_brutto: Kwota brutto pomniejszona o darmowy okres przy dodawaniu firmy
+  CompanyForm:
+    packet: Zmień aktualny pakiet
+    is_paid: Zaznaczenie w tym miejscu jako oplacone nie spowoduje wygenerowania faktury (przejdź do zamówień)
+    is_active: Czy firma ma wyświetlać sie na stronie?
+    rent_to: Gdy firma jest w pakiecie STANDARD data wykupienia nie obowiązuje
+    type_list: Wybierz oferty, które posiada firma
+    main_category_id: Wybierz kategorię główną
+    categories_list: Zaznacz pozostałe kategorie
+  OrderForm:
+    note: Dodaj notatke do zamówienia
+    value_netto: Kwota podawana w groszach
+    value_brutto: Kwota podawana w groszach
+    is_paid: Zaznaczenie spowoduje wygenerowanie faktury
+  

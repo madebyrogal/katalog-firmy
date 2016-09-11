@@ -1,0 +1,50 @@
+Company:
+  company_0:
+    profile_id: 4
+    name: Skup złomu "U Mietka"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo velit, scelerisque quis condimentum ut, accumsan in turpis. Nunc ut purus nibh, et placerat arcu. Phasellus pellentesque lorem et augue molestie blandit. Maecenas tellus dolor, posuere eget consectetur nec, malesuada sed libero. Ut nulla leo, pharetra vitae sodales in, dapibus sed magna. Pellentesque et nunc nec lectus aliquet eleifend ac quis ipsum. Phasellus pharetra scelerisque lorem non sodales. Sed porttitor feugiat euismod. Proin pharetra dui ac risus tincidunt ac fringilla elit elementum. Maecenas aliquam, sapien sit amet sodales varius, erat est posuere ligula, id lacinia turpis urna vel nulla. Praesent pellentesque metus sed nisl volutpat eu dictum velit posuere. Nulla rutrum cursus mi, tristique porta leo dapibus vel. Pellentesque diam odio, bibendum a elementum in, pellentesque ultricies metus. Aenean blandit massa nisl. Vestibulum at varius est. Quisque id felis elit, condimentum malesuada enim. Aenean molestie consectetur nulla quis vestibulum. Morbi tempus, sem in egestas pulvinar, orci augue pulvinar sem, non pretium tellus ipsum vel velit. Ut consectetur risus aliquam purus auctor non eleifend turpis dapibus. Duis et nibh in sem hendrerit euismod."
+    city: "Tarnowskie Góry"
+    post_code: 42-600
+    street: Kwiatowa 43
+    state: śląskie
+    nip: 465-465-64
+    phone: 600700800
+    mobile: 400321423
+    fax: 23453542523
+    gg: 42523
+    skype: 'asd@asdf.pl'
+    yt: 'asd'
+    fb: 'asd'
+    email_address: 'mietak@umietka.pl'
+    www: "http://umietka.pl"
+    packet: 1
+    rent_from: "2011-06-01 00:00:00"
+    rent_to: "2011-09-01 00:00:00"
+    is_paid: 0
+    is_active: 1
+    
+<?php for($i = 1; $i < 15; $i++): ?>
+  company_<?php echo $i; ?>:
+    profile_id: 4
+    name: "Firma_<?php echo $i; ?>"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo velit, scelerisque quis condimentum ut, accumsan in turpis. Nunc ut purus nibh, et placerat arcu. Phasellus pellentesque lorem et augue molestie blandit. Maecenas tellus dolor, posuere eget consectetur nec, malesuada sed libero. Ut nulla leo, pharetra vitae sodales in, dapibus sed magna. Pellentesque et nunc nec lectus aliquet eleifend ac quis ipsum. Phasellus pharetra scelerisque lorem non sodales. Sed porttitor feugiat euismod. Proin pharetra dui ac risus tincidunt ac fringilla elit elementum. Maecenas aliquam, sapien sit amet sodales varius, erat est posuere ligula, id lacinia turpis urna vel nulla. Praesent pellentesque metus sed nisl volutpat eu dictum velit posuere. Nulla rutrum cursus mi, tristique porta leo dapibus vel. Pellentesque diam odio, bibendum a elementum in, pellentesque ultricies metus. Aenean blandit massa nisl. Vestibulum at varius est. Quisque id felis elit, condimentum malesuada enim. Aenean molestie consectetur nulla quis vestibulum. Morbi tempus, sem in egestas pulvinar, orci augue pulvinar sem, non pretium tellus ipsum vel velit. Ut consectetur risus aliquam purus auctor non eleifend turpis dapibus. Duis et nibh in sem hendrerit euismod."
+    city: "Tarnowskie Góry"
+    post_code: 42-600
+    street: Kwiatowa 43
+    state: śląskie
+    nip: 465-465-64
+    phone: 600700800
+    mobile: 400321423
+    gg: 42523
+    skype: 'asd@asdf.pl'
+    yt: 'asd'
+    fb: 'asd'
+    email_address: 'mietak@umietka.pl'
+    fax: 23453542523
+    www: "http://umietka.pl"
+    packet: 2
+    rent_from: "2011-06-01 00:00:00"
+    rent_to: "2011-09-01 00:00:00"
+    is_paid: 0
+    is_active: 1
+<?php endfor; ?>    

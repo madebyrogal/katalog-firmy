@@ -1,0 +1,149 @@
+/* 
+    Document   : main
+    Created on : 2009-09-25, 10:47:27
+    Author     : kaliban
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.dashboard
+{
+    display: block;
+}
+
+.dashboard .item
+{
+    cursor: pointer;
+    border: 2px solid #333333;
+    margin-right: 10px;
+    padding: 5px;
+    float: left;
+    color: #333333;
+}
+.dashboard .item:hover
+{
+    border: 2px solid green;
+    color: green;
+}
+
+
+.sf_admin_form_field_Metas table th 
+{
+	border: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.sf_admin_form_field_Metas table td 
+{
+	border: 0;
+}
+
+.sf_admin_form_field_Metas input {
+	width: 370px !important;
+	font-size: 12px;
+	/*border: 1px solid grey;*/
+	padding: 2px;
+}
+
+.sf_admin_form_field_key_value input {
+	width: 600px !important; 
+	font-size: 16px;
+	padding: 2px;
+}
+
+.back_image {
+	padding: 10px;
+	border: 1px solid #bdbcbc;
+	float: left;
+	margin: 10px;
+}
+
+#disImage {
+	text-align: center; 
+	background: white;
+	float: left; 
+	margin: 1px; 
+	border: 1px solid black; 
+	width: 253px; 
+	height: 174px; 
+	overflow: hidden;
+	position: absolute;
+	display: none;
+}
+
+#bgTransparent {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #dedede;
+	z-index: 100;
+	filter: alpha(opacity=50);  -moz-opacity: 0.5; opacity: 0.5;
+	display: none;
+}
+
+#infoBox {
+	width: 300px;
+	height: 120px;
+	background: #fff;
+	border: 1px solid #8c8c8c;
+	text-align: center;
+	z-index: 2000;
+	display: none;
+	position: fixed;
+	padding: 20px;
+	top: 0;
+	left: 0;
+	filter: alpha(opacity=100);  -moz-opacity: 1.0; opacity: 1.0;	
+}
+
+#infoText {
+	font: 13px Tahoma;
+	color: #000;
+}
+
+th, td {
+    border: 0;
+}
+
+.td_center {
+    text-align: center;
+}
+
+.table_version {
+    border-top: 2px solid #000;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+}
+
+.table_version th {
+    background: #F4F4F4;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.table_version td {
+    border-bottom: 1px solid #DDDDDD;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table_version tr.active td {
+    background: #fef099 !important;
+}
+
+.table_version tr.version_edit td {
+    background: #bbe8ff;
+}

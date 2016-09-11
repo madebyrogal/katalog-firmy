@@ -1,0 +1,51 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Contact
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contact
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [contact_allow]
+        _edit:
+          credentials:  [contact_allow]
+        _delete:
+          credentials:  [contact_allow]
+        _index:
+          credentials:  [contact_allow]
+        _save:
+          credentials:  [contact_allow]
+      fields:
+        address:
+          label:  "Adres"
+      list:
+        title:  "Dane kontaktowe"
+        display:  [address]
+        object_actions:
+          _edit: ~
+        batch_actions: {}
+        actions:  {}
+      filter:
+        class:  false
+      form:
+        actions:
+          _list: ~
+          _save: ~
+#        display:
+#          "Dane kontaktowe":  [contact_id]
+        display:
+          "Dane kontaktowe":  [<?php Lang::getDefaultWidget(); ?>, has_captcha, _js]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+      edit:
+        title:  "Zmień dane kontaktowe"
+      new:
+        title:  "Ustaw dane kontaktowe"

@@ -1,0 +1,24 @@
+Sliders:
+  Slider_1:
+    name: Strona główna 
+    is_default: 1
+    width: 708
+    height: 232
+    random: 0
+    
+SliderBanners:    
+  banner_1:
+    Sliders: Slider_1
+    name: Banner 1
+    file: c5b89325fd1780d7063ca729357f4d52ed8eb949.png	
+    position: 1
+  banner_2:
+    Sliders: Slider_1
+    name: Banner 2
+    file: 2364051c7e34250aff3be59c57e47c4a2e774e9b.png
+    position: 2
+  banner_3:
+    Sliders: Slider_1
+    name: Banner 3
+    file: 840208ff33d2f49528a1ca4b5bae638312b44ee9.png
+    position: 3

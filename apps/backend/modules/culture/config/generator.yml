@@ -1,0 +1,44 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Culture
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          culture
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [culture_allow]
+        _edit:
+          credentials:  [culture_allow]
+        _delete:
+          credentials:  [culture_allow]
+        _index:
+          credentials:  [culture_allow]
+      fields:
+        language:
+          label: Symbol
+        label:
+          label: Nazwa języka
+        is_default:
+          label: Jest domyślna
+        is_active:
+          label: Jest aktywna
+      list:
+        title: "Lista wersji językowych"
+        table_method: queryNotDeleted
+        display: [=language, label, _is_default, is_active]
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: "Edycja wersji językowej: %%language%%"
+      new:
+        title: "Nowa wersja językowa"

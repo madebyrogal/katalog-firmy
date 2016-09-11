@@ -1,0 +1,280 @@
+body {
+	margin: 30px 0px 0px 0px;
+}
+
+a,img { border: 0;outline: 0; }
+
+a { text-decoration: none; color: #1b6698; }
+a:hover { color: #a5a5a5; }
+
+#main {
+	background: url(img/main_bg.png) no-repeat #fff;
+	width: 756px;
+	min-height: 480px;
+	margin: auto;
+	padding: 30px 20px 20px 20px;
+	border-bottom: 3px #000 solid;
+	border-left: 3px #000 solid;
+	border-right: 3px #000 solid;
+	position: relative;
+	font-size: 12px;
+	font-family: tahoma;
+	line-height: 20px;
+}
+
+#top {
+	width: 802px;
+	height: 108px;
+	background: url(img/admin_top_bg.png);
+	margin: auto;
+	position: relative;
+}
+
+#tabs {
+	border: 0px #000 solid;
+	width: 400px;
+	height: 36px;
+	position: absolute;
+	bottom: 0px;
+	left: 3px;
+}
+
+#tabs ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#tabs li {
+	display: inline;
+	float: left;
+	margin: 0;
+	padding: 0px 5px 0px 0px;
+}
+
+#tabs li{
+    cursor:pointer;
+}
+#tabs li a.current{
+    background-position: 0 100%; 
+}
+
+#menu a.menu_1, a.menu_2 {
+	height: 36px; 
+	text-indent: -999em; 
+	display: block; 
+	padding: 0px;
+}
+
+#menu a.menu_1 {
+	width: 178px; background: url(img/menu_1.png) no-repeat; 
+}
+
+#menu a.menu_2 {
+	width: 178px; background: url(img/menu_2.png) no-repeat; 
+}
+
+#menu a:hover {
+	background-position: 0 100%; 
+}
+
+.text {
+	display: block;
+	float: left;
+}
+
+.komunikat {
+	display: block;
+	float: right;
+}
+
+.zaw_menu {
+	border: 0px #f8f8f8 solid;
+	margin: 5px 0;
+	width:150px;
+	height:330px;
+	float:left;
+}
+
+#zaw_tabs {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: left;
+}
+
+#zaw_tabs li {
+	border: 0px #f8f8f8 solid;
+	margin: 0;
+	padding: 0;
+}
+
+#zaw_tabs li a{
+	border: 0px #f8f8f8 solid;	
+	height: 30px;
+	display: block;
+	padding: 10px 0px 0px 20px;
+	text-decoration: none;
+	color: #21759b;
+}
+
+#zaw_tabs li a.current {
+	background: #f8f8f8;
+	font-weight: bold;
+}
+
+#zaw_tabs li a:hover {
+	background: #f8f8f8;
+	font-weight: bold;
+}
+
+#ustawienia .polityka {
+	margin: 50px 0px;
+	display: block;
+}
+
+.zaw_main {
+	border: 3px #f8f8f8 solid;
+	margin: 5px 0;
+	float:left;
+	width:564px;
+	height:356px;
+	padding: 15px 15px 10px 20px;
+	text-align: left;
+}
+
+.input_name {
+	width: 140px;
+	float: left;
+	border: 0px #000 solid;
+	font-weight: bold;
+	text-align: right;
+	padding: 0px 20px 0px 0px;
+	display: block;
+	position: static;
+	overflow: hidden;
+}
+
+.input_value {
+	width: 390px;
+	float: left;
+	border: 0px #000 solid;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	display: block;
+	position: static;
+	overflow: hidden;
+}
+
+.zaw_default {
+	margin: 15px 0px 0px 450px;
+	float: left;
+}
+
+.zaw_submit {
+	margin: 15px 30px 0px;
+	float: right;
+}
+
+.zaw_submit input  {
+	background: transparent url(img/but_zapisz.png) 0 0 no-repeat;
+	border: none;
+	height: 27px;
+	cursor: pointer;
+	margin: 0; 
+	padding: 0;
+	width: 71px;
+}
+
+.zaw_submit input:hover {
+	background-position: 0 100%; 
+}
+
+.zaw_default input  {
+	background: transparent url(img/but_default.png) 0 0 no-repeat;
+	border: none;
+	height: 27px;
+	cursor: pointer;
+	margin: 0; 
+	padding: 0;
+	width: 167px;
+}
+
+.zaw_default input:hover {
+	background-position: 0 100%; 
+}
+
+#footer {
+	width: 800px;
+	height: 45px;
+	margin: auto;
+}
+
+#footer .left {
+	margin: 10px 0px 0px 15px;
+	font: 11px Arial;
+	color: #000;
+	float: left;
+}
+
+#footer .right {
+	margin: 10px 15px 0px 0px;
+	font: 11px Arial;
+	color: #000;
+	float: right;
+}
+
+#footer a {
+	color: #3c3c3c;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#info_result {
+	width: 100%;
+	min-height: 80px;
+	border: 0px #000 solid;
+	text-align:center;
+}
+
+#loading {
+	width: 300px;
+	margin: auto;
+	padding: 20px 0 10px 0;
+	font: 13px Arial;
+	color: #000;
+	border: 0px #000 solid;
+	font-weight: bold;
+}
+
+#loading img {
+	float:left;
+	padding: 0px 10px;
+}
+
+#validation_icon {
+	position: absolute;
+	margin: 0px 0px 0px 10px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {	
+	#validation_icon {
+		margin: 2px 0px 0px 10px;
+	}
+}
+
+.input_textarea {
+	width: 520px;
+	height:230px;
+	padding: 0;
+	margin: auto;
+	border: 0px #000 solid;
+	text-align: left;
+	position: static;
+	overflow: hidden;
+}

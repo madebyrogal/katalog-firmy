@@ -1,0 +1,52 @@
+﻿.bg {
+	margin: 0;
+	background: #ffffff;
+}
+
+#logo {
+	margin: 0px 0px 20px 0px;
+}
+
+.log_main {
+	background-color: #fff;
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	height: 260px;
+	padding: 30px 0px 10px 0px;
+	margin: auto;
+	text-align: center;
+}
+
+.button {
+	border: 1px #666 solid;
+    
+	padding-left: 10px;
+	width: 254px;
+	height: 36px;
+	display: inline;
+	outline:none;
+	font-size: 18px;
+	line-height: 34px;
+}
+
+.log_login {
+	border: 0px #000 solid;
+	width: 450px;
+	height: 36px;
+	margin: auto;
+	padding: 10px 0px 15px 0px;
+	clear: both;
+	text-align: left; 
+}	
+
+.log_pole_nazwa {
+	float: left; 
+	line-height: 30px;
+	font-family: arial;
+	font-size: 14px;
+}	
+
+.log_pole_input {
+	float: right; 
+}	

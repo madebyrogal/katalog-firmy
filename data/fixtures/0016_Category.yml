@@ -1,0 +1,45 @@
+Category:
+  NestedSet: true
+  CATEGORY_BASE:
+    is_public: true
+    name: 'Kategorie'
+    children:
+      CATEGORY_0:
+        is_public: true
+        name: 'Budownictwo'
+        children:
+          CATEGORY_1:
+            is_public: true
+            name: 'Budownictwo 1'
+          CATEGORY_2:
+            is_public: true
+            name: 'Budownictwo 2'
+          CATEGORY_3:
+            is_public: true
+            name: 'Budownictwo 3'
+      CATEGORY_4:
+        is_public: true
+        name: 'Motoryzacja'
+        children:
+          CATEGORY_5:
+            is_public: true
+            name: 'Motoryzacja 1'
+          CATEGORY_6:
+            is_public: true
+            name: 'Motoryzacja 2'
+          CATEGORY_7:
+            is_public: true
+            name: 'Motoryzacja 3'
+      CATEGORY_8:
+        is_public: true
+        name: 'Biznes'
+        children:
+          CATEGORY_9:
+            is_public: true
+            name: 'Biznes 1'
+          CATEGORY_10:
+            is_public: true
+            name: 'Biznes 2'
+          CATEGORY_11:
+            is_public: true
+            name: 'Biznes 3'        

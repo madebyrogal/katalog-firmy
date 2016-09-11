@@ -1,0 +1,33 @@
+DEBUG   |160824 21:27:51|Closing SQL dump file.
+DEBUG   |160824 21:28:04|Closing SQL dump file.
+DEBUG   |160824 21:28:17|Closing SQL dump file.
+DEBUG   |160824 21:28:30|Closing SQL dump file.
+DEBUG   |160824 21:28:43|Closing SQL dump file.
+DEBUG   |160824 21:28:55|Closing SQL dump file.
+DEBUG   |160824 21:29:08|Closing SQL dump file.
+DEBUG   |160824 21:29:12|PHP WARNING (not an error; you can ignore) on line 143 in file <root>wp-content/plugins/akeebabackupcore/app/Solo/engine/Driver/Mysql.php:
+DEBUG   |160824 21:29:12|mysql_close(): 27 is not a valid MySQL-Link resource
+DEBUG   |160824 21:29:12|Closing SQL dump file.
+DEBUG   |160824 21:29:16|Closing SQL dump file.
+DEBUG   |160824 21:29:29|Closing SQL dump file.
+DEBUG   |160824 21:29:42|Closing SQL dump file.
+DEBUG   |160824 21:29:56|Closing SQL dump file.
+DEBUG   |160824 21:30:08|Closing SQL dump file.
+DEBUG   |160824 21:30:21|Closing SQL dump file.
+DEBUG   |160824 21:30:35|Closing SQL dump file.
+DEBUG   |160824 21:30:46|Closing SQL dump file.
+DEBUG   |160824 21:30:52|Closing SQL dump file.
+DEBUG   |160824 21:30:56|Closing SQL dump file.
+DEBUG   |160824 21:31:00|Closing SQL dump file.
+DEBUG   |160824 21:31:06|Closing SQL dump file.
+DEBUG   |160824 21:31:19|Closing SQL dump file.
+DEBUG   |160824 21:31:24|Closing SQL dump file.
+DEBUG   |160824 21:31:36|Closing SQL dump file.
+DEBUG   |160824 21:31:48|Closing SQL dump file.
+DEBUG   |160824 21:32:01|Closing SQL dump file.
+DEBUG   |160824 21:32:14|Closing SQL dump file.
+DEBUG   |160824 21:32:27|Closing SQL dump file.
+DEBUG   |160824 21:32:37|Closing SQL dump file.
+DEBUG   |160824 21:32:41|Closing SQL dump file.
+DEBUG   |160824 21:32:46|Closing SQL dump file.
+DEBUG   |160824 21:32:50|Closing SQL dump file.

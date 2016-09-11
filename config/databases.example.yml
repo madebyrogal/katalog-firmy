@@ -1,0 +1,15 @@
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=dbname
+      username: root
+      password: 
+
+prod:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=dbname
+      username: root
+      password: 

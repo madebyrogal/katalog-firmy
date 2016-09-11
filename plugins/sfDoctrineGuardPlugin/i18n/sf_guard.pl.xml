@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Forgot your password?</source>
+        <target>Zapomniałeś hasła?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target>Nie martw się, pomożemy Ci uzyskać dostęp do konta.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target>Na wpisany poniżej adres email zostanie przesłana wiadomość z informacjami, jak uzyskać dostęp do Twojego konta.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Request</source>
+        <target>Wyślij</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Hi %name%</source>
+        <target>Witaj, %name%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Hello %name%</source>
+        <target>Witaj, %name%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Hello</source>
+        <target>Witaj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Change</source>
+        <target>Zmień</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Below you will your username and new password:</source>
+        <target>Wpisz poniżej Twoje nowe dane logowania:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username</source>
+        <target>Nazwa użytkownika</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit>
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target>Otrzymujesz tą wiadomość, ponieważ ktoś poprosił o przypomnienie hasła dla konta powiązanego z tym adresem email.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target>Możesz zmienić hasło poprzez kliknięcie poniższego linku. Pamiętaj, że będzie on ważny tylko przez 24 godziny.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Click to change password</source>
+        <target>Kliknij, aby zmienić hasło</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Enter your new password in the form below.</source>
+        <target>Wpisz nowe hasło.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

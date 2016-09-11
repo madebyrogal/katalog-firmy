@@ -1,0 +1,44 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Sliders
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sliders
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing;
+
+    config:
+      actions:
+        _new:
+          credentials:  [sliders_allow]
+        _edit:
+          credentials:  [sliders_allow]
+        _delete:
+          credentials:  [sliders_allow]
+      fields:
+        name: {label: "Nazwa"}
+        is_default: {label: "Domyślny?"}
+        width: {label: "Szerokość"}
+        height: {label: "Wysokość"}
+        random: {label: "Losowe wyświetlanie?"}
+        count: {label: "Liczba bannerów"}
+      list:
+        title: "Lista sliderów"
+        display: [=name, _is_default, _width, _height, _random, _count]
+      filter:
+        class: false
+      form:    ~
+      edit:
+        display:
+          "Slider": [slider_id, is_default, name, width, height, random]
+          "Obrazy": [SliderBannerForm, _banners_list]
+        title: "Edytuj slider"
+      new:
+        display:
+          "Slider": [slider_id, is_default, name, width, height, random]
+        title: "Nowy slider"

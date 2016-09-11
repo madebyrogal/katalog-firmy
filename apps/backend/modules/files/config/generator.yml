@@ -1,0 +1,56 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Files
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          files
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [files_allow]
+        _edit:
+          credentials:  [files_allow]
+        _delete:
+          credentials:  [files_allow]
+        _index:
+          credentials:  [files_allow]
+      fields:
+        name:
+          label: "Nazwa pliku lub katalogu"
+        description:
+          label: "Opis zawartości"
+      list:
+        display: [ _name ]
+        max_per_page: 99999
+        title: Lista plików i katalogów
+        batch_actions: {}
+        actions:
+          newFolder:
+            label: "Dodaj katalog"
+            action: NewFolder
+            name: "Dodaj katalog"
+          _new:
+            label: "Dodaj plik"
+      filter:
+        class: false
+      form:
+        display:
+          "Plik": [file_id, <?php Lang::getDefaultWidget(); echo ','; ?> file, parent_id, _js ]
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+      edit:
+        title: Edytuj plik
+      new:
+        title: "Dodaj nowy plik"
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

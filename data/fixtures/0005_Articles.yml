@@ -1,0 +1,7 @@
+Articles:
+  ART_2:
+    sfGuardUser: USER_ADMIN
+    ArtCategories: ART_CATEGORY_1
+    is_public: true
+    title: Informacje
+    content: "<p>To jest przykład.</p>"

@@ -1,0 +1,10 @@
+Themes:
+  default:
+    is_active: true
+    name: default
+    author: 'Studiotg Agencja Interaktywna'
+    author_email: null
+    author_url: null
+    copyright: null
+    version: '1.0'
+    description: 'Szablon domyślny'

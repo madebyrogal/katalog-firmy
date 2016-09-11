@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="pl" datatype="plaintext" original="messages" date="2010-03-30T11:26:50Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Required.</source>
+        <target>Pole wymagane</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Invalid.</source>
+        <target>Błąd</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>The two passwords must be the same.</source>
+        <target>Podane hasła muszą być takie same</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>An object with the same "username" already exist.</source>
+        <target>Podana nazwa użytkownika już istnieje</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>CSRF attack detected.</source>
+        <target>Wygasła sesja formularza - przeładuj stronę i spróbuj jeszcze raz</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>The date must be after %min%.</source>
+        <target>Minimalna data rozpoczęcia wynajmu to początek następnego dnia.</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>"%value%" must be %length% characters long.</source>
+        <target>Kod musi mieć %length% znaki</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>The numbers you typed in are invalid.</source>
+        <target>Podany kod jest niepoprawny</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>An object with the same "%column%" already exist.</source>
+        <target>Podany adres e-mail istneje juz w bazie</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

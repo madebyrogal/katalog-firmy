@@ -1,0 +1,78 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Articles
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          articles
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [articles_allow]
+        _edit:
+          credentials:  [articles_allow]
+        _delete:
+          credentials:  [articles_allow]
+        _index:
+          credentials:  [articles_allow]
+      fields:
+        title:  {label: Tytuł }
+        artcategory_id: {label: Kategoria }
+        author_id: {label: Autor}
+        is_public: {label: Widoczny }
+        galleries_list: {label: Galerie}
+        content:
+          label: Treść
+      list:
+        table_method: retrieveArticlesList
+        title: "Lista tekstów"
+        display: [=title, _author, _artcategory, _is_public ]
+        batch_actions:
+          public:
+            label: "Widoczne"
+          unpublic:
+            label: "Niewidoczne"
+          _delete:
+            label: "Usuń"
+        object_actions:
+          _edit:      { label: Edytuj }
+          settings: {label: Ustawienia}
+          _delete:    { label: Usuń }
+      filter:
+        display:
+          - title
+          - artcategory_id
+          - author_id
+          - created_at
+      form:
+        display:
+          "Tekst":     [<?php Lang::getDefaultWidget(); echo ','; ?> author_id, artcategory_id, is_public, created_at,  _tags, _js]
+#          <?php Lang::getActiveAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          <?php Lang::getNotDeletedAndNotDefaultWidget(); ?> #PAMIETAJ O SPACJI
+          "Galerie":   [_gallery_help, galleries_list, _gallery_preview]
+          "Pliki":   [files_list]
+          "Meta tagi":   [Metas]
+          "Właściwości": [ArticleCustomField]
+        fields:
+          Metas: { }
+          files_list:
+            label:  Pliki
+          comments_list:
+            attributes: {style: "display: none"}
+            label:  false
+      edit:
+        title: "Edycja tekstu: %%title%%"
+      new:
+        title: Dodaj nowy tekst
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

@@ -1,0 +1,39 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Category
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          category
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [category_allow]
+        _edit:
+          credentials:  [category_allow]
+        _delete:
+          credentials:  [category_allow]
+        _index:
+          credentials:  [category_allow]
+      fields:  
+        is_public: {label: "Widoczny?"}
+      list:    
+        title: "Branże / kategorie"
+        batch_actions: []        
+      filter:  
+        class: false
+      form:    
+        display:
+          "Kategoria": [name, description, is_public, parent_id, _js]
+          "Meta tagi": [Metas]
+      edit:    
+        title: Edytuj "%%name%%"        
+      new:     
+        title: Dodaj kategorie

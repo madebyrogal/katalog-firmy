@@ -1,0 +1,42 @@
+/*! ===================================
+ *  Author: BBDesign & WPHunters
+ *  -----------------------------------
+ *  Email(support):
+ * 	bbdesign_sp@yahoo.com
+ *  ===================================
+ */
+
+/* GRID */
+.main-grid {
+    margin-right: 300px;
+}
+
+.main-grid .text-col {
+    float: left;
+    width: 100%;
+}
+
+.main-grid .logo-col {
+    float: right;
+    width: 300px;
+    margin-right: -300px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+@media (max-width: 980px) {
+    .main-grid { margin-right: 0; }
+    .main-grid .logo-col { display: none; }
+}
+
+/* STYLING */
+.wrap > h2 { margin-bottom: .5em; }
+.buttons-line { margin: 2em 0; }
+.spinner { float: none; }
+.mega-hr { margin: 2em 0; }
+
+.tune-message, .import-message {
+    display: none; margin-bottom: 2em;
+    padding: 0 1.5em;
+    border: 1px solid #ccc;
+}

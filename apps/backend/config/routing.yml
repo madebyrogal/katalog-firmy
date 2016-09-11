@@ -1,0 +1,500 @@
+company_stats:
+  url:     /company_stats/:id
+  class:   sfDoctrineRoute
+  options: { model: Company, type: object }
+  param:   { module: company, action: stats, sf_format: html }
+  
+
+invoice:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Invoice
+    module:               invoice
+    prefix_path:          /invoice
+    column:               id
+    with_wildcard_routes: true
+
+company:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Company
+    module:               company
+    prefix_path:          /company
+    column:               id
+    with_wildcard_routes: true
+
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+order:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Order
+    module:               order
+    prefix_path:          /order
+    column:               id
+    with_wildcard_routes: true
+
+type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Type
+    module:               type
+    prefix_path:          /type
+    column:               id
+    with_wildcard_routes: true
+
+status:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Status
+    module:               status
+    prefix_path:          /status
+    column:               id
+    with_wildcard_routes: true
+
+prices:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Prices
+    module:               prices
+    prefix_path:          /prices
+    column:               id
+    with_wildcard_routes: true
+
+delete_article_versions:
+  url: /delete_article_versions
+  param:
+    module:               articles
+    action:               deleteAllVersions
+  requirements:
+    sf_method: [post]
+
+icon:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Icon
+    module:               icon
+    prefix_path:          /icons
+    column:               id
+    with_wildcard_routes: true
+
+icon_switch_active:
+  url:     /icon_switch_active/:id
+  class:   sfDoctrineRoute
+  options: { model: Icon, type: object }
+  param:   { module: icon, action: switchActive, sf_format: html }
+
+stg_log_user_actions:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                StgLogUserActions
+    module:               stg_log_user_actions
+    prefix_path:          /stg_log_user_actions
+    column:               id
+    with_wildcard_routes: true
+
+
+tag:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Tag
+    module:               tag
+    prefix_path:          /tag
+    column:               id
+    with_wildcard_routes: true
+
+#catalog_product:
+articles_catalog_product:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Articles
+    module:               catalog_product
+    prefix_path:          /catalog_product
+    column:               article_id
+    with_wildcard_routes: true
+
+#catalog_category:
+art_categories_catalog_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ArtCategories
+    module:               catalog_category
+    prefix_path:          /catalog_category
+    column:               artcategory_id
+    with_wildcard_routes: true
+
+culture:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Culture
+    module:               culture
+    prefix_path:          /culture
+    column:               language
+    with_wildcard_routes: true
+
+message:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                message
+    module:               message
+    prefix_path:          /message
+    column:               id
+    with_wildcard_routes: true
+
+article_delete_version:
+  url: /article_delete_version/:article_version_id
+  class:   sfDoctrineRoute
+  options: { model: ArticlesVersion, type: object }
+  param:   { module: articles, action: DeleteVersion, sf_format: html }
+
+article_set_active_version:
+  url: /article_set_active_version/:article_version_id
+  class:   sfDoctrineRoute
+  options: { model: ArticlesVersion, type: object }
+  param:   { module: articles, action: SetActiveVersion, sf_format: html }
+
+files_new_folder:
+  url: /files/NewFolder/action
+  param:   { module: files, action: NewFolder, sf_format: html }
+
+contact_queries:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ContactQueries
+    module:               contact_queries
+    prefix_path:          /contact_queries
+    column:               query_id
+    with_wildcard_routes: true
+
+slider_banners_setup:
+  url:     /slider_banners_setup/:slider_banner_id
+  class:   sfDoctrineRoute
+  options: { model: SliderBanners, type: object }
+  param:   { module: sliders, action: SetBannerUp, sf_format: html }
+
+slider_banners_setdown:
+  url:     /slider_banners_setdown/:slider_banner_id
+  class:   sfDoctrineRoute
+  options: { model: SliderBanners, type: object }
+  param:   { module: sliders, action: SetBannerDown, sf_format: html }
+
+slider_banners_remove:
+  url:     /slider_banners_remove/:slider_banner_id
+  class:   sfDoctrineRoute
+  options: { model: SliderBanners, type: object }
+  param:   { module: sliders, action: sliderBannerDelete, sf_format: html }
+
+sliders_switch_random:
+  url:     /sliders_switch_random/:slider_id
+  class:   sfDoctrineRoute
+  options: { model: Sliders, type: object }
+  param:   { module: sliders, action: switchRandom, sf_format: html }
+
+sliders_switch_default:
+  url:     /sliders_switch_default/:slider_id
+  class:   sfDoctrineRoute
+  options: { model: Sliders, type: object }
+  param:   { module: sliders, action: switchDefault, sf_format: html }
+
+art_categories:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ArtCategories
+    module:               art_categories
+    prefix_path:          /art_categories
+    column:               artcategory_id
+    with_wildcard_routes: true
+
+#przelaczanie artyku�y: widoczny/niewidoczny
+art_categories_switch_public:
+  url:     /art_categories/:artcategory_id/SwitchPublic
+  class:   sfDoctrineRoute
+  options: { model: ArtCategories, type: object }
+  param:   { module: art_categories, action: SwitchPublic, sf_format: html }
+
+
+slider_banners:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SliderBanners
+    module:               slider_banners
+    prefix_path:          /slider_banners
+    column:               slider_banner_id
+    with_wildcard_routes: true
+
+sliders:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Sliders
+    module:               sliders
+    prefix_path:          /sliders
+    column:               slider_id
+    with_wildcard_routes: true
+
+menus:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Menus
+    module:               menus
+    prefix_path:          /menus
+    column:               id
+    with_wildcard_routes: true
+
+user_logos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserLogos
+    module:               user_logos
+    prefix_path:          /user_logos
+    column:               user_logo_id
+    with_wildcard_routes: true
+
+#przelaczanie klienta: aktywne/nieaktywne
+user_logos_user_logos_switch_active:
+  url:     /user_logos_switch_active/:user_logo_id
+  class:   sfDoctrineRoute
+  options: { model: UserLogos, type: object }
+  param:   { module: user_logos, action: switchActive, sf_format: html }
+
+user_banners:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserBanners
+    module:               user_banners
+    prefix_path:          /user_banners
+    column:               user_banner_id
+    with_wildcard_routes: true
+
+user_banners_user_banners_switch_active:
+  url:     /user_banners_switch_active/:user_banner_id
+  class:   sfDoctrineRoute
+  options: { model: UserBanners, type: object }
+  param:   { module: user_banners, action: switchActive, sf_format: html }
+
+themes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Themes
+    module:               themes
+    prefix_path:          /themes
+    column:               id
+    with_wildcard_routes: true
+
+#przelaczanie klienta: aktywne/nieaktywne
+themes_themes_switch_active:
+  url:     /themes_switch_active/:id
+  class:   sfDoctrineRoute
+  options: { model: Themes, type: object }
+  param:   { module: themes, action: switchActive, sf_format: html }
+
+contact:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Contact
+    module:               contact
+    prefix_path:          /contact
+    column:               contact_id
+    with_wildcard_routes: true
+
+edit_default_contact:
+  url:     /edit_default_contact
+  class:   sfDoctrineRoute
+  options: { model: Contact, type: object }
+  param:   { module: contact, action: edit, contact_id: 1, sf_format: html }
+
+
+files:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Files
+    module:               files
+    prefix_path:          /files
+    column:               file_id
+    with_wildcard_routes: true
+
+#comments:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                Comments
+#    module:               comments
+#    prefix_path:          /comments
+#    column:               comment_id
+#    with_wildcard_routes: true
+
+pictures:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Pictures
+    module:               pictures
+    prefix_path:          /pictures
+    column:               picture_id
+    with_wildcard_routes: true
+
+pictures_ajax_upload:
+  url:     /pictures_ajax_upload
+  param:   { module: pictures, action: ajaxUpload, sf_format: html }
+
+pictures_generate_back_image:
+  url:     /pictures_generateBackImage/:picture_id
+  class:   sfDoctrineRoute
+  options: { model: Pictures, type: object }
+  param:   { module: pictures, action: generateBackImage, sf_format: html }
+
+metas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Metas
+    module:               metas
+    prefix_path:          /metas
+    column:               meta_id
+    with_wildcard_routes: true
+
+#edit_default_metas:
+#  url:     /edit_default_metas
+#  class:   sfDoctrineRoute
+#  options: { model: Metas, type: object }
+##  param:   { module: metas, action: edit, meta_id: 1, sf_format: html }
+#  param:   { module: metas, action: edit, sf_format: html }
+  
+edit_default_metas:
+  url:     /edit_default_metas
+#  class:   sfDoctrineRoute
+#  options: { model: Metas, type: object }
+#  param:   { module: metas, action: edit, meta_id: 1, sf_format: html }
+  param:   { module: metas, action: editDefault, sf_format: html }
+
+galleries:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Galleries
+    module:               galleries
+    prefix_path:          /galleries
+    column:               gallery_id
+    with_wildcard_routes: true
+
+galleries_deletepicture:
+  url:     /delete_picture_from_gallery/:picture_id
+  class:   sfDoctrineRoute
+  options: { model: Pictures, type: object }
+  param:   { module: galleries, action: deletePicture, sf_format: html }
+
+galleries_set_default_picture:
+  url:     /gallery/set_default_picture/:picture_id.html
+  class:   sfDoctrineRoute
+  options: { model: Pictures, type: object }
+  param:   { module: galleries, action: setDefaultPicture, sf_format: html }
+  requirements:
+    gallery_id: \d+
+    sf_method: [get]
+
+articles_articles_switch_public:
+  url:     /articles/:article_id/SwitchPublic
+  class:   sfDoctrineRoute
+  options: { model: Articles, type: object }
+  param:   { module: articles, action: SwitchPublic, sf_format: html }
+
+catalog_product_articles_switch_public:
+  url:     /catalog_product/:article_id/SwitchPublic
+  class:   sfDoctrineRoute
+  options: { model: Articles, type: object }
+  param:   { module: catalog_product, action: SwitchPublic, sf_format: html }
+
+articles:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Articles
+    module:               articles
+    prefix_path:          /articles
+    column:               article_id
+    with_wildcard_routes: true
+    
+catalog_product:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Articles
+    module:               articles
+    prefix_path:          /articles
+    column:               article_id
+    with_wildcard_routes: true    
+    
+catalog_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Artcategories
+    module:               artcategories
+    prefix_path:          /artcategories
+    column:               artcategory_id
+    with_wildcard_routes: true    
+
+artcategories:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Artcategories
+    module:               artcategories
+    prefix_path:          /artcategories
+    column:               artcategory_id
+    with_wildcard_routes: true
+
+#catalog_products:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                Articles
+#    module:               catalog_products
+#    prefix_path:          /catalog_products
+#    column:               article_id
+#    with_wildcard_routes: true
+#
+#catalog_categories:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                Artcategories
+#    module:               catalog_categories
+#    prefix_path:          /catalog_categories
+#    column:               artcategory_id
+#    with_wildcard_routes: true
+
+super_config:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SuperConfig
+    module:               super_config
+    prefix_path:          /super_config
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+# default rules
+homepage:
+  url:   /
+#  param: { module: default, action: index }
+  param: { module: sfAdminDash, action: dashboard }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

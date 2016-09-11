@@ -1,0 +1,521 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-26 02:09+0600\n"
+"PO-Revision-Date: 2015-12-26 02:09+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: admin/framework\n"
+"X-Poedit-SearchPathExcluded-1: admin/installer\n"
+"X-Poedit-SearchPathExcluded-2: admin/tgm\n"
+"X-Poedit-SearchPathExcluded-3: admin/plugins\n"
+
+#: 404.php:5
+msgid "Oopss! 404"
+msgstr ""
+
+#: 404.php:6
+msgid "The page you are looking for has not been found"
+msgstr ""
+
+#: about-me-page.php:94 content.php:61
+msgid "Share"
+msgstr ""
+
+#: about-me-page.php:95 about-me-page.php:96 about-me-page.php:97
+#: content.php:62 content.php:63 content.php:64
+msgid "Share link on"
+msgstr ""
+
+#: admin/custom_functions.php:112 admin/custom_functions.php:115
+msgid "&hellip;"
+msgstr ""
+
+#: admin/custom_functions.php:260
+msgid "Comments closed"
+msgstr ""
+
+#: admin/options.php:14
+msgid "Melica Theme Options"
+msgstr ""
+
+#: admin/options.php:20
+msgid "General"
+msgstr ""
+
+#: admin/options.php:28
+msgid "Logo"
+msgstr ""
+
+#: admin/options.php:29
+msgid "Used in header"
+msgstr ""
+
+#: admin/options.php:34
+msgid "Logo Text"
+msgstr ""
+
+#: admin/options.php:35
+msgid "Leave empty for default site name"
+msgstr ""
+
+#: admin/options.php:45
+msgid "Use image as logo?"
+msgstr ""
+
+#: admin/options.php:52
+msgid "Upload"
+msgstr ""
+
+#: admin/options.php:53
+msgid "Recommended size is about 100x30"
+msgstr ""
+
+#: admin/options.php:65 admin/options.php:71
+msgid "Favicon"
+msgstr ""
+
+#: admin/options.php:72
+msgid "Recommended size 16x16"
+msgstr ""
+
+#: admin/options.php:80
+msgid "SEO"
+msgstr ""
+
+#: admin/options.php:81
+msgid "Search Engine Optimisation"
+msgstr ""
+
+#: admin/options.php:87
+msgid "SEO keywords"
+msgstr ""
+
+#: admin/options.php:88
+msgid "Separating by commas."
+msgstr ""
+
+#: admin/options.php:97
+msgid "Custom code"
+msgstr ""
+
+#: admin/options.php:102
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/options.php:103
+msgid "Write your custom css here."
+msgstr ""
+
+#: admin/options.php:110
+msgid "Custom JS"
+msgstr ""
+
+#: admin/options.php:111
+msgid "Write your custom js here."
+msgstr ""
+
+#: admin/options.php:122
+msgid "Layout options"
+msgstr ""
+
+#: admin/options.php:130
+msgid "Common"
+msgstr ""
+
+#: admin/options.php:136
+msgid "Enable reveal animations"
+msgstr ""
+
+#: admin/options.php:137
+msgid "Reveal elements as they enter the viewport."
+msgstr ""
+
+#: admin/options.php:147
+msgid "Masonry grid"
+msgstr ""
+
+#: admin/options.php:153
+msgid "Use grid layout"
+msgstr ""
+
+#: admin/options.php:154
+msgid ""
+"Sidebar will be hidden on index and archive pages. Posts will be displayed "
+"in columns."
+msgstr ""
+
+#: admin/options.php:161
+msgid "Columns"
+msgstr ""
+
+#: admin/options.php:177
+msgid "Sidebar"
+msgstr ""
+
+#: admin/options.php:183
+msgid "Select sidebar position"
+msgstr ""
+
+#: admin/options.php:187
+msgid "Right side"
+msgstr ""
+
+#: admin/options.php:191
+msgid "Left side"
+msgstr ""
+
+#: admin/options.php:203
+msgid "Show sidebar on archives and home page"
+msgstr ""
+
+#: admin/options.php:209
+msgid "Show sidebar on pages"
+msgstr ""
+
+#: admin/options.php:215
+msgid "Show sidebar on posts"
+msgstr ""
+
+#: admin/options.php:229 admin/options.php:325
+msgid "Footer"
+msgstr ""
+
+#: admin/options.php:234
+msgid "Copyright text"
+msgstr ""
+
+#: admin/options.php:245
+msgid "Colors"
+msgstr ""
+
+#: admin/options.php:254 admin/options.php:428
+msgid "Note!"
+msgstr ""
+
+#: admin/options.php:255
+msgid "To apply default color just leave field empty."
+msgstr ""
+
+#: admin/options.php:262
+msgid "Main"
+msgstr ""
+
+#: admin/options.php:269
+msgid "Primary Color"
+msgstr ""
+
+#: admin/options.php:278
+msgid "Body Text Color"
+msgstr ""
+
+#: admin/options.php:287
+msgid "Headings Color"
+msgstr ""
+
+#: admin/options.php:296
+msgid "Header"
+msgstr ""
+
+#: admin/options.php:303
+msgid "Select header mode"
+msgstr ""
+
+#: admin/options.php:307
+msgid "Default (white)"
+msgstr ""
+
+#: admin/options.php:311
+msgid "Inverted (black, semi-transparent)"
+msgstr ""
+
+#: admin/options.php:332
+msgid "Footer Background"
+msgstr ""
+
+#: admin/options.php:340
+msgid "Footer Text Color"
+msgstr ""
+
+#: admin/options.php:350
+msgid "Typography"
+msgstr ""
+
+#: admin/options.php:358
+msgid "Primary"
+msgstr ""
+
+#: admin/options.php:363
+msgid "Primary Font Face"
+msgstr ""
+
+#: admin/options.php:378
+msgid "Primary Font Weight"
+msgstr ""
+
+#: admin/options.php:396
+msgid "Secondary"
+msgstr ""
+
+#: admin/options.php:401
+msgid "Headings Font Face"
+msgstr ""
+
+#: admin/options.php:419
+msgid "Socials"
+msgstr ""
+
+#: admin/options.php:429
+msgid "If some social network is not required - leave field empty."
+msgstr ""
+
+#: admin/options.php:435
+msgid "Social profiles"
+msgstr ""
+
+#: admin/options.php:441
+msgid "Facebook URL"
+msgstr ""
+
+#: admin/options.php:447
+msgid "Twitter URL"
+msgstr ""
+
+#: admin/options.php:453
+msgid "Dribbble URL"
+msgstr ""
+
+#: admin/options.php:459
+msgid "Google URL"
+msgstr ""
+
+#: admin/options.php:465
+msgid "LinkedIn URL"
+msgstr ""
+
+#: admin/options.php:471
+msgid "Pinterest URL"
+msgstr ""
+
+#: admin/options.php:477
+msgid "Instagram URL"
+msgstr ""
+
+#: admin/options.php:487
+msgid "404 Page"
+msgstr ""
+
+#: admin/options.php:495
+msgid "Tip"
+msgstr ""
+
+#: admin/options.php:496
+msgid "Here you can edit text that will be shown on 404 page"
+msgstr ""
+
+#: admin/options.php:502
+msgid "Text"
+msgstr ""
+
+#: admin/widgets/about_me.php:19
+msgid "\"About me\" widget"
+msgstr ""
+
+#: admin/widgets/about_me.php:22
+msgid "Displays \"About me\" block."
+msgstr ""
+
+#: admin/widgets/about_me.php:81
+msgid "Please, setup this widget in the dashboard."
+msgstr ""
+
+#: admin/widgets/mailchimp.php:19
+msgid "Mailchimp subscription form"
+msgstr ""
+
+#: admin/widgets/mailchimp.php:22
+msgid "Displays mailchimp subscription form."
+msgstr ""
+
+#: admin/widgets/mailchimp.php:53
+msgid "Name"
+msgstr ""
+
+#: admin/widgets/mailchimp.php:57 comments.php:78
+msgid "Email"
+msgstr ""
+
+#: admin/widgets/mailchimp.php:61
+msgid "Subscribe"
+msgstr ""
+
+#: admin/widgets/popular_posts.php:18
+msgid "Popular posts"
+msgstr ""
+
+#: admin/widgets/popular_posts.php:21
+msgid "Displays list of popular blog posts."
+msgstr ""
+
+#: admin/widgets/popular_posts.php:93 content.php:43
+#: inc/related-articles.php:39
+msgid "Read more"
+msgstr ""
+
+#: admin/widgets/socials.php:19
+msgid "Social networks widget"
+msgstr ""
+
+#: admin/widgets/socials.php:22
+msgid "Displays list of social network buttons."
+msgstr ""
+
+#: admin/widgets/socials.php:43
+msgid "Define your socials in widget settings"
+msgstr ""
+
+#: admin/widgets/wphunters-insta-wdgt/wphunters-insta-wdgt.php:42
+msgid "Instagram widget"
+msgstr ""
+
+#: admin/widgets/wphunters-insta-wdgt/wphunters-insta-wdgt.php:44
+msgid "Displays latest photos from user's profile."
+msgstr ""
+
+#: comments.php:30
+msgid "Edit"
+msgstr ""
+
+#: comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:54
+msgid "&laquo; Newer"
+msgstr ""
+
+#: comments.php:55
+msgid "Older &raquo;"
+msgstr ""
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:74
+msgid "Your name"
+msgstr ""
+
+#: comments.php:83
+msgid "Type your message here"
+msgstr ""
+
+#: comments.php:90
+#, php-format
+msgid "Leave a reply to %s"
+msgstr ""
+
+#: comments.php:91
+msgid "Cancel"
+msgstr ""
+
+#: comments.php:92
+msgid "Leave a reply"
+msgstr ""
+
+#: content.php:19
+msgid "This post is sticky."
+msgstr ""
+
+#: content.php:26
+#, php-format
+msgid "By <a href=\"%s\">%s</a>"
+msgstr ""
+
+#: footer.php:22
+msgid "Define your footer menu in dashboard"
+msgstr ""
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:44
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:56
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:58
+msgid "Main sidebar. Shown on all pages(except pages where is disabled)."
+msgstr ""
+
+#: functions.php:117 functions.php:118
+msgid "Theme Options"
+msgstr ""
+
+#: functions.php:229 functions.php:231
+msgid "Prev"
+msgstr ""
+
+#: functions.php:241 functions.php:243
+msgid "Next"
+msgstr ""
+
+#: header.php:52
+msgid "Define your primary menu in dashboard"
+msgstr ""
+
+#: header.php:58
+msgid "Type and hit enter"
+msgstr ""
+
+#: inc/featured-slider.php:19
+msgid "SLIDER: Posts with tag \"featured\" not found."
+msgstr ""
+
+#: inc/related-articles.php:7
+msgid "You might also like"
+msgstr ""
+
+#: index.php:29
+msgid "Search results for: "
+msgstr ""
+
+#: index.php:36
+msgid "Recent posts"
+msgstr ""
+
+#: not-found.php:3
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: not-found.php:7
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: not-found.php:12
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: searchform.php:5
+msgid "Type search query"
+msgstr ""

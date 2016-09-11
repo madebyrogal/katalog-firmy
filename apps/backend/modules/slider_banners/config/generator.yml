@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           SliderBanners
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          slider_banners
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [slider_banners_allow]
+        _edit:
+          credentials:  [slider_banners_allow]
+        _delete:
+          credentials:  [slider_banners_allow]
+      fields:
+        slider_id: {label: "Slider"}
+      list: ~
+      filter:  ~
+      form:
+        display:
+          "Banner": [slider_id, name, link, target, user_banner_id, old_file, file, position]
+      edit:
+        title: "Edytuj banner"
+      new:     ~

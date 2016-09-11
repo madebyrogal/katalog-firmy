@@ -1,0 +1,54 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Comments
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          comments
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [comments_allow]
+        _edit:
+          credentials:  [comments_allow]
+        _delete:
+          credentials:  [comments_allow]
+        _index:
+          credentials:  [comments_allow]
+      fields:
+        title:
+          label: "Tytuł"
+        author: {label: Autor}
+        content: {label: Treść}
+        created_at: {label: Dodano}
+        articles_list:
+          attributes: {style: "display: none"}
+          label:  false
+        galleries_list:
+          attributes: {style: "display: none"}
+          label:  false
+      list:
+        title: Lista komentarzy
+        display: [=title, author, email, created_at]
+        object_actions:
+          _edit:
+            label: "Pokaż"
+          _delete:
+            label: "Usuń"
+        actions: {}
+        max_per_page:   20
+      filter:
+        display: [title, author, email]
+      form:
+        display:
+          "Komentarz": [title, author, email, content, articles_list, galleries_list]
+      edit:
+        title: Edytuj komentarz
+      new:     ~

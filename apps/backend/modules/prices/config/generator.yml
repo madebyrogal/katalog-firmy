@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Prices
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          prices
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:  nothing
+
+    config:
+      actions: 
+        _new:
+          credentials:  [prices_allow]
+        _edit:
+          credentials:  [prices_allow]
+        _delete:
+          credentials:  [prices_allow]
+        _index:
+          credentials:  [prices_allow]
+      fields:  
+        packet_name: {label: Pakiet}
+        packet: {label: Pakiet}
+        period: {label: Okres}
+        start_netto: {label: Cena netto startowa}
+        start_brutto: {label: Cena brutto startowa}
+      list:    
+        title: Cenniki
+        display: [=id, =name, _packet_name, _period,  _price_netto, _price_brutto]
+      filter:  
+        class: false
+      form:    
+        display:
+          "Cennik": [name, packet, period, price_netto, price_brutto]
+      edit:    
+        title: Edytuj cennik
+      new:     
+        title: Dodaj cennik

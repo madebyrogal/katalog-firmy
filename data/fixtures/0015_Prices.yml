@@ -1,0 +1,29 @@
+Prices:
+  price1:
+    name: "STANDARD"
+    packet: 2
+    period: 0
+    price_netto: 0
+    price_brutto: 0
+    is_deletable: 0
+  price2:
+    name: "Premium 90 dni"
+    packet: 1
+    period: 90
+    price_netto: 7317
+    price_brutto: 9000
+    is_deletable: 0
+  price3:
+    name: "Premium 180 dni"
+    packet: 1
+    period: 180
+    price_netto: 14634
+    price_brutto: 18000
+    is_deletable: 0
+  price4:
+    name: "Premium 360 dni"
+    packet: 1
+    period: 360
+    price_netto: 29268
+    price_brutto: 36000
+    is_deletable: 0

@@ -1,0 +1,6 @@
+lightFormFlashSuccess:
+  stylesheets:
+    - /backend/themes/css/jquery/dark-hive/jquery-ui.custom.css
+#
+#  javascripts:
+#    - /backend/themes/dark-hive/js/jquery-ui-1.8.4.custom.min.js

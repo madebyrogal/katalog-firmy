@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /home/allf/public_html/web/publiker_v_3-5-3/administrator/

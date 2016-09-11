@@ -1,0 +1,410 @@
+SuperConfig:
+
+#####
+# MODUŁY
+##
+  translations_enabled:
+    setting: translations_enabled
+    value: on
+    scope:  "MODUŁY"
+    description:  'Czy wersje językowe są włączone?'
+
+#####
+# SYSTEM
+##
+  menu_keys:
+    #WAŻNE! Nie usuwać
+    setting: menu_keys
+    value: 'Menu główne,Informacje,Pozostałe'
+    scope:  "SYSTEM"
+    description:  Identyfikatory menu_key dla menu generowanych dla wersji językowych (oddzielone przecinkami)
+
+  art_categories_tree_keys:
+    #WAŻNE! Nie usuwać
+    setting: art_categories_tree_keys
+#    value: 'ARTICLES_TREE,SECURE_ART_CATEGORY_INSTALLER,SECURE_ART_CATEGORY_DESIGNER,SECURE_ART_CATEGORY_USER,SECURE_ART_CATEGORY_SERVICEMAN'
+    value: 'ARTICLES_TREE'
+    scope:  "SYSTEM"
+    description:  Identyfikatory tree_key dla drzewek, które są prawdziwymi ArtCategories (oddzielone przecinkami)
+
+  system_user_quota:
+    setting: system_user_quota
+    value: '104857600'
+    scope:  "SYSTEM"
+    description:  "Ilość miejsca przenaczona na obrazki i pliki"
+
+  sf_guard_plugin_algorithm_callable:
+    setting: sf_guard_plugin_algorithm_callable
+    value: 'md5'
+    scope:  "SYSTEM"
+    description:  "Algorytm kodowania haseł"
+
+  system_users_default_is_active:
+    setting: system_users_default_is_active
+    value: 'on'
+    scope:  "SYSTEM"
+    description:  "Rejestracja użytkownika nie wymaga aktywacji."
+
+#####
+# FRONTEND
+##
+  #comments
+  comments_show_captcha:
+    setting:  comments_show_captcha
+    value: "on"
+    scope:  "FRONTEND"
+    description:  "Czy stosować zabezpieczenie antyspamowe dla komentarzy?"
+  #galleries
+  galleries_per_page_default:
+    setting:  galleries_per_page_default
+    value: "20"
+    scope:  "FRONTEND"
+    description:  "Liczba obrazków na stronie"
+  #artcategories
+  artcategories_short_len_default:
+    setting:  artcategories_short_len_default
+    value: "500"
+    scope:  "FRONTEND"
+    description:  "Ilość znaków artykułu/tekstu na liście"
+  artcategories_per_page_default:
+    setting:  artcategories_per_page_default
+    value: "10"
+    scope:  "FRONTEND"
+    description:  "Liczba tekstów na stronie"
+  google_translator:
+    setting: google_translator
+    value:  "vertical"
+    scope: "FRONTEND"
+    description: "Wyświetlaj tłumacza Google. Dostępne wartości: {vertical - pionowy, horizontal - poziomy, list - lista, off - brak tłumacza}"   
+
+#####
+# ZEWNĘTRZNE
+##
+  altimus:
+    setting: altimus
+    value: ''
+    scope:  "ZEWNĘTRZNE"
+    description:  "Kod z altimusa"
+  google_maps:
+    setting: google_maps
+    value: 'ABQIAAAAsjcB-98ORo9FlGTcBJEEhRQRwSO8m_GVKRPn5pEasqSRj2u5PhTLqRL1ORvA5VGnt8mZGXzZak37Rw'
+    scope:  "ZEWNĘTRZNE"
+    description:  "Kod z Google Maps"
+  google_analytics:
+    setting: google_analytics
+    value: ''
+    scope:  "ZEWNĘTRZNE"
+    description:  "Kod z Google Analytics"
+
+#####
+# SMTP
+##
+  systemmail_type:
+    setting:  systemmail_type
+    value: "smtp"
+    scope:  "SMTP"
+    description:  "Sposob wysylania wiadomości systemowych. Dostępne wartości: sendmail i smtp"
+  smtp_host:
+    setting: smtp_host
+    value:  "mail.serwertg.pl"
+    scope: "SMTP"
+    description: "SMTP - host"
+  smtp_port:
+    setting: smtp_port
+    value: "587"
+#    value: "25"
+    scope: "SMTP"
+    description: "SMTP - port (25 lub 587)"
+  smtp_username:
+    setting: smtp_username
+    value: "mailer@serwertg.pl"
+    scope: "SMTP"
+    description: "SMTP - nazwa użytkownika"
+  smtp_password:
+    setting: smtp_password
+    value: "mailer12pl"
+    scope: "SMTP"
+    description: "SMTP - hasło"
+  smtp_security:
+    setting:  smtp_security
+    value: "null"
+    scope:  "SMTP"
+    description:  "Zabezpieczenia. Domyślnie: null. Dostępne wartości: ssl i tls"
+
+#####
+# OBRAZKI
+##
+  pictures_thumbnail_types:
+    setting:  pictures_thumbnail_types
+#    value:  'min,mid,max,homepage'
+    value:  'min,mid,max,logo'
+    scope:  "PICTURES"
+    description:  "Typy miniaturek (rozdzielone przecinkami)."
+
+  pictures_settings_thumbnail_max_width:
+    setting:  pictures_settings_thumbnail_max_width
+    value:  "300"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_max_height:
+    setting:  pictures_settings_thumbnail_max_height
+    value:  "225"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_max_inflate:
+    setting: pictures_settings_thumbnail_max_inflate
+    value:  "off"
+    scope:  "PICTURES"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+  pictures_settings_thumbnail_max_scale:
+    setting: pictures_settings_thumbnail_max_scale
+    value:  "on"
+    scope:  "PICTURES"
+    description:  "Skaluje obrazek"
+
+  pictures_settings_thumbnail_min_width:
+    setting:  pictures_settings_thumbnail_min_width
+    value:  "80"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_min_height:
+    setting:  pictures_settings_thumbnail_min_height
+    value:  "60"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_min_inflate:
+    setting: pictures_settings_thumbnail_min_inflate
+    value:  "off"
+    scope:  "PICTURES"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+  pictures_settings_thumbnail_min_scale:
+    setting: pictures_settings_thumbnail_min_scale
+    value:  "on"
+    scope:  "PICTURES"
+    description:  "Skaluje obrazek"
+
+  pictures_settings_thumbnail_mid_width:
+    setting:  pictures_settings_thumbnail_mid_width
+    value:  "200"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_mid_height:
+    setting:  pictures_settings_thumbnail_mid_height
+    value:  "150"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_mid_inflate:
+    setting: pictures_settings_thumbnail_mid_inflate
+    value:  "off"
+    scope:  "PICTURES"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+  pictures_settings_thumbnail_mid_scale:
+    setting: pictures_settings_thumbnail_mid_scale
+    value:  "on"
+    scope:  "PICTURES"
+    description:  "Skaluje obrazek"
+
+  pictures_settings_thumbnail_logo_width:
+    setting:  pictures_settings_thumbnail_logo_width
+    value:  "122"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_logo_height:
+    setting:  pictures_settings_thumbnail_logo_height
+    value:  "122"
+    scope:  "PICTURES"
+  pictures_settings_thumbnail_logo_inflate:
+    setting: pictures_settings_thumbnail_logo_inflate
+    value:  "off"
+    scope:  "PICTURES"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+  pictures_settings_thumbnail_logo_scale:
+    setting: pictures_settings_thumbnail_logo_scale
+    value:  "on"
+    scope:  "PICTURES"
+    description:  "Skaluje obrazek"
+
+
+#####
+# BANNERY
+##
+
+  banners_files_max_size:
+    setting: banners_files_max_size
+    value: '1048576'
+    scope:  "BANNERY"
+    description:  "Maksymalny rozmiar pliku w bajtach"
+  banners_picture_compression:
+    setting: banners_picture_compression
+    value: '100'
+    scope:  "BANNERY"
+    description:  "Kompresja obrazka"
+  banners_thumbnail_compression:
+    setting: banners_thumbnail_compression
+    value: '100'
+    scope:  "BANNERY"
+    description:  "Kompresja miniaturki"
+    
+  banners_picture_width:
+    setting: banners_picture_width
+    value: '950'
+    scope:  "BANNERY"
+    description:  "Szerokość obrazka"
+  banners_picture_height:
+    setting: banners_picture_height
+    value: '150'
+    scope:  "BANNERY"
+    description:  "Wysokość"
+  banners_picture_inflate:
+    setting: banners_picture_inflate
+    value: 'off'
+    scope:  "BANNERY"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+
+  banners_thumbnail_max_width:
+    setting: banners_thumbnail_max_width
+    value: '950'
+    scope:  "BANNERY"
+    description:  "Szerokość dużej miniaturki"
+  banners_thumbnail_max_height:
+    setting: banners_thumbnail_max_height
+    value: '150'
+    scope:  "BANNERY"
+    description:  "Wysokość dużej miniaturki"
+  banners_thumbnail_max_inflate:
+    setting: banners_thumbnail_max_inflate
+    value: 'off'
+    scope:  "BANNERY"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+
+  banners_thumbnail_min_width:
+    setting: banners_thumbnail_min_width
+    value: '475'
+    scope:  "BANNERY"
+    description:  "Szerokość małej miniaturki"
+  banners_thumbnail_min_height:
+    setting: banners_thumbnail_min_height
+    value: '75'
+    scope:  "BANNERY"
+    description:  "Wysokość małej miniaturki"
+  banners_thumbnail_min_inflate:
+    setting: banners_thumbnail_min_inflate
+    value: 'off'
+    scope:  "BANNERY"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+
+#####
+# LOGO - NAGŁÓWKI
+##
+  logos_files_max_size:
+    setting: logos_files_max_size
+    value: '1048576'
+    scope:  "LOGO"
+    description:  "Maksymalny rozmiar pliku w bajtach"
+  logos_picture_compression:
+    setting: logos_picture_compression
+    value: '100'
+    scope:  "LOGO"
+    description:  "Kompresja obrazka"
+  logos_thumbnail_compression:
+    setting: logos_thumbnail_compression
+    value: '100'
+    scope:  "LOGO"
+    description:  "Kompresja miniaturki"
+    
+  logos_picture_width:
+    setting: logos_picture_width
+    value: '250'
+    scope:  "LOGO"
+    description:  "Szerokość obrazka"
+  logos_picture_height:
+    setting: logos_picture_height
+    value: '100'
+    scope:  "LOGO"
+    description:  "Wysokość"
+  logos_picture_inflate:
+    setting: logos_picture_inflate
+    value: 'off'
+    scope:  "LOGO"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+    
+  logos_thumbnail_max_width:
+    setting: logos_thumbnail_max_width
+    value: '250'
+    scope:  "LOGO"
+    description:  "Szerokość dużej miniaturki"
+  logos_thumbnail_max_height:
+    setting: logos_thumbnail_max_height
+    value: '100'
+    scope:  "LOGO"
+    description:  "Wysokość dużej miniaturki"
+  logos_thumbnail_max_inflate:
+    setting: logos_thumbnail_max_inflate
+    value: 'off'
+    scope:  "LOGO"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+
+  logos_thumbnail_min_width:
+    setting: logos_thumbnail_min_width
+    value: '250'
+    scope:  "LOGO"
+    description:  "Szerokość małej miniaturki"
+  logos_thumbnail_min_height:
+    setting: logos_thumbnail_min_height
+    value: '100'
+    scope:  "LOGO"
+    description:  "Wysokość małej miniaturki"
+  logos_thumbnail_min_inflate:
+    setting: logos_thumbnail_min_inflate
+    value: 'off'
+    scope:  "LOGO"
+    description:  "Jeśli obrazek jest mniejszy niż generowana miniatura - powiększa obrazek"
+    
+  invoice_place_of_issue:
+    setting: invoice_place_of_issue
+    value:  "Piekary Śląskie"
+    scope:  "INVOICE"
+    description:  "Miejsce wystawienia faktury"
+    is_enabled_for_users: true
+
+  invoice_seller_name:
+    setting: invoice_seller_name
+    value:  "Ocean Firm Kobiołka Dawid"
+    scope:  "INVOICE"
+    description:  "Nazwa firmy wystawiającego"
+    is_enabled_for_users: true
+
+  invoice_seller_city:
+    setting: invoice_seller_city
+    value:  "Piekary Śląskie"
+    scope:  "INVOICE"
+    description:  "Miasto wystawiającego"
+    is_enabled_for_users: true
+
+  invoice_seller_street:
+    setting: invoice_seller_street
+    value:  "ul.Sowińskiego 4/4/5"
+    scope:  "INVOICE"
+    description:  "Ulica wystawiającego"
+    is_enabled_for_users: true
+    
+  invoice_seller_code:
+    setting: invoice_seller_code
+    value:  "41-940"
+    scope:  "INVOICE"
+    description:  "Kod pocztowy wystawiającego"
+    is_enabled_for_users: true
+
+  invoice_seller_nip:
+    setting: invoice_seller_nip
+    value:  "4980198182"
+    scope:  "INVOICE"
+    description:  "NIP wystawiającego"
+    is_enabled_for_users: true
+
+  of_free_days:
+    setting: of_free_days
+    value:  "30"
+    scope:  "OF"
+    description:  "Ilość darmowych dni w pakiecie PREMIUM"
+    is_enabled_for_users: true
+    
+  transferuj_id:
+    setting: transferuj_id
+    value:  "2763"
+    scope:  "OF"
+    description:  "Id klienta w serwisie transferuj.pl"
+    is_enabled_for_users: true

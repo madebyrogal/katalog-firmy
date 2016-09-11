@@ -1,0 +1,55 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           UserBanners
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user_banners
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+
+    config:
+      actions:
+        _new:
+          credentials:  [user_banners_allow]
+        _edit:
+          credentials:  [user_banners_allow]
+        _delete:
+          credentials:  [user_banners_allow]
+        _index:
+          credentials:  [user_banners_allow]
+      fields:
+        user_banner_id:
+          label:  "Bannery"
+        file:
+          label:  "Obrazek"
+        is_active:
+          label:  "Wyświetl"
+        user_logo_id:
+          label:  "Banner"
+        title:
+          label:  "Tekst"
+      list:
+        title:  "Lista bannerów"
+        display:  [ _user_banner_id,_is_active ]
+        actions:
+          _new:
+            label:  "Dodaj nowy"
+      filter:
+        class:  false
+      form:
+        display:
+          "Banner": [  user_banner_id,file,title,is_active, link, target]
+      edit:
+        title:  "Edytuj banner"
+      new:
+        title:  "Nowy banner"
+        actions:
+          _list:
+            label:  "Anuluj"
+          _save: ~
+          _save_and_add: ~

@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Type
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          type
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: nothing
+
+    config:
+      actions: 
+        _new:
+          credentials:  [type_allow]
+        _edit:
+          credentials:  [type_allow]
+        _delete:
+          credentials:  [type_allow]
+        _index:
+          credentials:  [type_allow]
+      fields:  ~
+      list:    
+        title: Lista typów ofert
+        display: [=id, =name]
+      filter:  
+        class: false
+      form:    
+        display:
+          "Typ oferty": [name]
+      edit:    
+        title: Edytuj "%%name%%"
+      new:     
+        title: Dodaj nowy typ oferty

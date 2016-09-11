@@ -1,0 +1,5 @@
+autoload:
+  stg_task:
+    name:           stg_task
+    path:           %SF_CONFIG_DIR%/task
+    recursive:      on

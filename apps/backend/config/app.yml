@@ -1,0 +1,205 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+all:
+  cms_version:  1.0.0
+  sf_admin_dash:
+    web_dir: /backend/brands/sell4cms
+    image_dir: /backend/brands/sell4cms/images/icons/
+    jquery_ui: dark-hive
+    author: "Studiotg - Agencja Interaktywna"
+    resize_mode:  thumbnail
+    site: "Start"
+    login_route:  "@sf_guard_signin"
+    logout_route: "@sf_guard_signout"
+
+    #MENU
+    categories:
+      Company:
+        credentials: [[company_allow, category_allow]]
+        name: "Baza firm"
+        cms_part: of
+        items:
+          company:
+            credentials: [[company_allow]]
+            name: "Firmy"
+            url: company
+            image: folder.png
+          category:
+            credentials: [[category_allow]]
+            name: "Branże"
+            url: category
+            image: tabs.png      
+      Orders:
+        name:  "Zamówienia"
+        credentials: [[order_allow, invoice_allow]]
+        cms_part: of
+        items:
+          order: 
+            credentials: [[order_allow]]
+            name: "Lista zamówień"
+            url:   order
+            image: cart.png     
+          invoice:
+            credentials: [[invoice_allow]]
+            name: Faktury
+            url: invoice
+            image: dossier.png
+            
+      ConfigurationOf:                
+        name:  "Configuration"
+        credentials: [[message_allow, type_allow, prices_allow]]
+        cms_part: of
+        items:
+          type:
+            credentials: [[type_allow]]
+            name:  "Typy ofert"
+            url:   type
+            image: report.png          
+          message:
+            credentials: [[message_allow]]
+            name:  "Wiadomości wysyłane emailem"
+            url:   message
+            image: mail_write.png 
+          prices:
+            credentials: [[prices_allow]]
+            name:  "Cenniki"
+            url:   prices
+            image: box.png             
+          status:
+            credentials: [[SUPER_ADMINISTRATOR]]
+            name:  "Statusy zamówień"
+            url:   status
+            image: checkin.png             
+            
+      Content:
+        name:  "Content"
+        credentials: [[articles_allow, art_categories_allow]]
+        cms_part:        cms
+        items:
+          articles:
+            credentials: [[articles_allow]]
+            name: "Articles"
+            url:          articles
+            image:        article.png                   
+          art_categories:
+            credentials: [[art_categories_allow]]
+            name: "Article categories"
+            url:          art_categories
+            image:        table.png
+          galleries:
+            credentials: [[galleries_allow]]
+            name: "Galleries"
+            url:          galleries
+            image:        mediamanager.png
+          pictures:
+            credentials: [[pictures_allow]]
+            name: "Pictures"
+            url:          pictures
+            image:        image.png
+          files:
+            credentials: [[files_allow]]
+            name: "Files"
+            url:          files
+            image:        folder.png
+      Menu:
+        name: "Menu"
+        credentials: [[menus_allow]]
+        cms_part:        cms
+        items:
+          Menus:
+            credentials: [[menus_allow]]
+            name: "Menu management"
+            url:  menus
+            image:        navigate.png      
+      Layout:
+        name: "Layout settings"
+        credentials: [[user_banners_allow, user_logos_allow, themes_allow, sliders_allow, slider_banners_allow]]
+        cms_part:        cms
+        items:
+          UserBanners:
+            credentials: [[user_banners_allow]]
+            name: "Banners"
+            url:  user_banners
+            image:        image_gimp.png
+          UserLogos:
+            credentials: [[user_logos_allow]]
+            name: "Logos"
+            url:  user_logos
+            image:        view_top.png
+          Themes:
+            credentials:  [[themes_allow]]
+            name: "Themes"
+            url:  themes
+            image:        templatemanager.png
+          Sliders:
+            credentials:  [[sliders_allow]]
+            name: "Sliders"
+            url:  sliders
+            image:        slider.png
+#          SliderBanners:
+#            credentials:  [[slider_banners_allow]]
+#            name: "Slider banners"
+#            url:  slider_banners
+          Icons:
+            credentials: [[icons_allow]]
+            name: "Icons"
+            url:          icon
+            image:        icon.png
+      Configuration:
+        name:  "Configuration"
+        credentials: [[contact_allow, contact_queries_allow, metas_allow, culture_allow]]
+        cms_part:        cms
+        items:          
+          Contact:
+            credentials: [[contact_allow]]
+            url:          contact
+            image:        mail.png
+          ContactQueries:
+            credentials: [[contact_queries_allow]]
+            url:          contact_queries
+            name:         "Queries"
+            image:        questionmark.png
+          Metas:
+            credentials: [[metas_allow]]
+            url:          metas
+            name:         "Default metas"
+            image:        spanner.png              
+          Cultures:
+            credentials: [[SUPER_ADMINISTRATOR]]
+            url:          culture
+            name:         "Wersje językowe"
+            image:        flag_uk.png
+          StgLogUserActions:
+            credentials:  [SUPER_ADMINISTRATOR]
+            url:          stg_log_user_actions
+            name: "Logi"
+            image:  logviewer.png
+          SuperConfig:
+            credentials:  [SUPER_ADMINISTRATOR]
+            url:          super_config
+            image:        tools.png
+      UsersManagement:
+        name:  "Users management"
+        credentials: [[sf_guard_user_allow]]
+        cms_part:        crm
+        items:
+          sfGuardUser:
+            credentials: [[sf_guard_user_allow]]
+            name: Users
+            url:          sf_guard_user
+            image:        people.png
+          sfGuardGroup:
+#            credentials: [[sf_guard_group_allow]]
+            credentials: [SUPER_ADMINISTRATOR]
+            name: Groups
+            url:          sf_guard_group
+            image:        group.png
+          sfGuardPermisssion:
+#            credentials: [[sf_guard_permission]]
+            credentials: [SUPER_ADMINISTRATOR]
+            name: Permissions
+            url:          sf_guard_permission
+            image:        permissions.png

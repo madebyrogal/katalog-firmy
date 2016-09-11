@@ -1,0 +1,110 @@
+all:
+  routing_map:
+    options:
+      links:
+        ExternalURL:
+          route:  "false"
+          model:  "false" 
+          label:  Strony zewnętrznej
+#        Homepage:
+        homepage:
+          route: "false"
+          model: route:homepage
+          label: Strony głównej	  
+          credential: home_page_allow
+        AllGalleries:
+          route: galleries
+          model: Galleries
+          label: Listy galerii
+          credential: galleries_allow
+#        AllAds:
+#          route: ads
+#          model: "false"
+#          label: Listy ogłoszeń
+        contact:
+          route: "false"
+          model: route:contact
+          label: Kontaktu
+          credential: contact_allow
+        Articles:
+          route:  articles_show
+          model:  Articles
+          label:  Tekstu
+          credential: articles_allow
+        ArtCategories:
+          route:  artcategory_show
+          model:  ArtCategories
+          label:  Kategorii tekstów
+          credential: art_categories_allow
+#        catalog:
+#          route: "false"
+#          model: route:catalog
+#          label:  Katalogu produktów
+#          credential: art_categories_catalog_category_allow
+#        jobs:
+#          route: "false"
+#          model: route:jobs
+#          label:  Ofert pracy
+#          credential: jobs_allow
+#        CatalogProduct:
+#          route:  catalog_product_show
+#          model:  CatalogProduct
+#          real_model:  Articles
+#          label:  Produktu z katalogu
+#          credential: articles_catalog_product_allow
+#        CatalogCategory:
+#          route:  catalog_category_show
+#          model:  CatalogCategory
+#          real_model:  ArtCategories
+#          label:  Kategorii z katalogu
+#          credential: art_categories_catalog_category_allow
+        Galleries:
+          route:  galleries_show
+          model: Galleries
+          label:  Galerii
+          credential: galleries_allow
+#        product_news:
+#          route: "false"
+#          model: route:product_news
+#          label: Nowosci
+#          credential: sell
+#        product_promotions:
+#          route: "false"
+#          model: route:product_promotions
+#          label: Promocje
+#          credential: sell
+#        producer_list:
+#          route: "false"
+#          model: route:producer_list
+#          label: Producenci
+#          credential: sell
+        user_login:
+          route: "false"
+          model: route:user_login
+          label: Logowania
+          credential: login_allow
+        panel:
+          route: "false"
+          model: route:panel
+          label: Panelu klienta
+          credential: login_allow
+        order:
+          route: "false"
+          model: route:order
+          label: Dodaj firme
+          credential: login_allow
+#    routes:
+#      Articles: article_show
+#      ArtCategories: artcategory_show
+#      Galleries: galleries_show
+#      Files: files_show
+  css_classes:
+    classes:
+      empty:  Domyślny link #Domyslnie brak klasy - to jest nazwa zastrzezona, nie mozna jej uzywac w stylach dla A
+#      ico_wyb: Wybielanie zębów
+#      ico_zni: Znieczulenie
+#      ico_sto: Stomatologia estetyczna
+#      ico_end: Endodoncja
+#      ico_ort: Ortodoncja
+#      ico_inn: Inne
+

@@ -1,0 +1,1 @@
+Melica is a light blog template, crafted to showcase your content in an beautiful style.
